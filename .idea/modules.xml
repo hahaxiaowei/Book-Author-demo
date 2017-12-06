@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Book-Author-Demo.iml" filepath="$PROJECT_DIR$/Book-Author-Demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/book-author-demo-client/book-author-demo-client.iml" filepath="$PROJECT_DIR$/book-author-demo-client/book-author-demo-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Book-Author-Demo-Common/book-author-demo-common.iml" filepath="$PROJECT_DIR$/Book-Author-Demo-Common/book-author-demo-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/book-author-demo-provider/book-author-demo-provider.iml" filepath="$PROJECT_DIR$/book-author-demo-provider/book-author-demo-provider.iml" />
+    </modules>
+  </component>
+</project>

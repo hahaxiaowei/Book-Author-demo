@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="book-author-demo-client" />
+        <module name="book-author-demo-common" />
+        <module name="book-author-demo-provider" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Book-Author-Demo" target="1.6" />
+      <module name="book-author-demo-client" target="1.6" />
+      <module name="book-author-demo-common" target="1.6" />
+      <module name="book-author-demo-provider" target="1.6" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
