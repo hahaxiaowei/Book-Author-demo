@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.hfut.xc.bookauthordemo.provider.dao.NationalityMapper">
+  <resultMap id="BaseResultMap" type="cn.edu.hfut.xc.bookauthordemo.common.model.Nationality">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="nationality_name" jdbcType="VARCHAR" property="nationalityName" />
+    <result column="nationality_life" jdbcType="VARCHAR" property="nationalityLife" />
+    <result column="nationality_created_time" jdbcType="VARCHAR" property="nationalityCreatedTime" />
+    <result column="nationality_location" jdbcType="VARCHAR" property="nationalityLocation" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, nationality_name, nationality_life, nationality_created_time, nationality_location
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from nationality
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from nationality
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Nationality">
+    insert into nationality (id, nationality_name, nationality_life, 
+      nationality_created_time, nationality_location
+      )
+    values (#{id,jdbcType=VARCHAR}, #{nationalityName,jdbcType=VARCHAR}, #{nationalityLife,jdbcType=VARCHAR}, 
+      #{nationalityCreatedTime,jdbcType=VARCHAR}, #{nationalityLocation,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Nationality">
+    insert into nationality
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="nationalityName != null">
+        nationality_name,
+      </if>
+      <if test="nationalityLife != null">
+        nationality_life,
+      </if>
+      <if test="nationalityCreatedTime != null">
+        nationality_created_time,
+      </if>
+      <if test="nationalityLocation != null">
+        nationality_location,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="nationalityName != null">
+        #{nationalityName,jdbcType=VARCHAR},
+      </if>
+      <if test="nationalityLife != null">
+        #{nationalityLife,jdbcType=VARCHAR},
+      </if>
+      <if test="nationalityCreatedTime != null">
+        #{nationalityCreatedTime,jdbcType=VARCHAR},
+      </if>
+      <if test="nationalityLocation != null">
+        #{nationalityLocation,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Nationality">
+    update nationality
+    <set>
+      <if test="nationalityName != null">
+        nationality_name = #{nationalityName,jdbcType=VARCHAR},
+      </if>
+      <if test="nationalityLife != null">
+        nationality_life = #{nationalityLife,jdbcType=VARCHAR},
+      </if>
+      <if test="nationalityCreatedTime != null">
+        nationality_created_time = #{nationalityCreatedTime,jdbcType=VARCHAR},
+      </if>
+      <if test="nationalityLocation != null">
+        nationality_location = #{nationalityLocation,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Nationality">
+    update nationality
+    set nationality_name = #{nationalityName,jdbcType=VARCHAR},
+      nationality_life = #{nationalityLife,jdbcType=VARCHAR},
+      nationality_created_time = #{nationalityCreatedTime,jdbcType=VARCHAR},
+      nationality_location = #{nationalityLocation,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.hfut.xc.bookauthordemo.provider.dao.ShopMapper">
+  <resultMap id="BaseResultMap" type="cn.edu.hfut.xc.bookauthordemo.common.model.Shop">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="shop_name" jdbcType="VARCHAR" property="shopName" />
+    <result column="shop_address" jdbcType="VARCHAR" property="shopAddress" />
+    <result column="shop_creation_time" jdbcType="VARCHAR" property="shopCreationTime" />
+    <result column="shop_life" jdbcType="VARCHAR" property="shopLife" />
+    <result column="shop_nationality_id" jdbcType="VARCHAR" property="shopNationalityId" />
+    <result column="shop_owner_id" jdbcType="VARCHAR" property="shopOwnerId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, shop_name, shop_address, shop_creation_time, shop_life, shop_nationality_id, 
+    shop_owner_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_shop
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from tbl_shop
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Shop">
+    insert into tbl_shop (id, shop_name, shop_address, 
+      shop_creation_time, shop_life, shop_nationality_id, 
+      shop_owner_id)
+    values (#{id,jdbcType=VARCHAR}, #{shopName,jdbcType=VARCHAR}, #{shopAddress,jdbcType=VARCHAR}, 
+      #{shopCreationTime,jdbcType=VARCHAR}, #{shopLife,jdbcType=VARCHAR}, #{shopNationalityId,jdbcType=VARCHAR}, 
+      #{shopOwnerId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Shop">
+    insert into tbl_shop
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="shopName != null">
+        shop_name,
+      </if>
+      <if test="shopAddress != null">
+        shop_address,
+      </if>
+      <if test="shopCreationTime != null">
+        shop_creation_time,
+      </if>
+      <if test="shopLife != null">
+        shop_life,
+      </if>
+      <if test="shopNationalityId != null">
+        shop_nationality_id,
+      </if>
+      <if test="shopOwnerId != null">
+        shop_owner_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="shopName != null">
+        #{shopName,jdbcType=VARCHAR},
+      </if>
+      <if test="shopAddress != null">
+        #{shopAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="shopCreationTime != null">
+        #{shopCreationTime,jdbcType=VARCHAR},
+      </if>
+      <if test="shopLife != null">
+        #{shopLife,jdbcType=VARCHAR},
+      </if>
+      <if test="shopNationalityId != null">
+        #{shopNationalityId,jdbcType=VARCHAR},
+      </if>
+      <if test="shopOwnerId != null">
+        #{shopOwnerId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Shop">
+    update tbl_shop
+    <set>
+      <if test="shopName != null">
+        shop_name = #{shopName,jdbcType=VARCHAR},
+      </if>
+      <if test="shopAddress != null">
+        shop_address = #{shopAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="shopCreationTime != null">
+        shop_creation_time = #{shopCreationTime,jdbcType=VARCHAR},
+      </if>
+      <if test="shopLife != null">
+        shop_life = #{shopLife,jdbcType=VARCHAR},
+      </if>
+      <if test="shopNationalityId != null">
+        shop_nationality_id = #{shopNationalityId,jdbcType=VARCHAR},
+      </if>
+      <if test="shopOwnerId != null">
+        shop_owner_id = #{shopOwnerId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Shop">
+    update tbl_shop
+    set shop_name = #{shopName,jdbcType=VARCHAR},
+      shop_address = #{shopAddress,jdbcType=VARCHAR},
+      shop_creation_time = #{shopCreationTime,jdbcType=VARCHAR},
+      shop_life = #{shopLife,jdbcType=VARCHAR},
+      shop_nationality_id = #{shopNationalityId,jdbcType=VARCHAR},
+      shop_owner_id = #{shopOwnerId,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

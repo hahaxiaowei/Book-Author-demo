@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.hfut.xc.bookauthordemo.provider.dao.BookMapper">
+  <resultMap id="BaseResultMap" type="cn.edu.hfut.xc.bookauthordemo.common.model.Book">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="book_name" jdbcType="VARCHAR" property="bookName" />
+    <result column="book_class_id" jdbcType="VARCHAR" property="bookClassId" />
+    <result column="author_id" jdbcType="VARCHAR" property="authorId" />
+    <result column="library_id" jdbcType="VARCHAR" property="libraryId" />
+    <result column="shop_id" jdbcType="VARCHAR" property="shopId" />
+    <result column="publisher_id" jdbcType="VARCHAR" property="publisherId" />
+    <result column="book_code" jdbcType="VARCHAR" property="bookCode" />
+    <result column="publication_date" jdbcType="VARCHAR" property="publicationDate" />
+    <result column="published_address" jdbcType="VARCHAR" property="publishedAddress" />
+    <result column="nationnality_id" jdbcType="VARCHAR" property="nationnalityId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, book_name, book_class_id, author_id, library_id, shop_id, publisher_id, book_code, 
+    publication_date, published_address, nationnality_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_book
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from tbl_book
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Book">
+    insert into tbl_book (id, book_name, book_class_id, 
+      author_id, library_id, shop_id, 
+      publisher_id, book_code, publication_date, 
+      published_address, nationnality_id)
+    values (#{id,jdbcType=VARCHAR}, #{bookName,jdbcType=VARCHAR}, #{bookClassId,jdbcType=VARCHAR}, 
+      #{authorId,jdbcType=VARCHAR}, #{libraryId,jdbcType=VARCHAR}, #{shopId,jdbcType=VARCHAR}, 
+      #{publisherId,jdbcType=VARCHAR}, #{bookCode,jdbcType=VARCHAR}, #{publicationDate,jdbcType=VARCHAR}, 
+      #{publishedAddress,jdbcType=VARCHAR}, #{nationnalityId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Book">
+    insert into tbl_book
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="bookName != null">
+        book_name,
+      </if>
+      <if test="bookClassId != null">
+        book_class_id,
+      </if>
+      <if test="authorId != null">
+        author_id,
+      </if>
+      <if test="libraryId != null">
+        library_id,
+      </if>
+      <if test="shopId != null">
+        shop_id,
+      </if>
+      <if test="publisherId != null">
+        publisher_id,
+      </if>
+      <if test="bookCode != null">
+        book_code,
+      </if>
+      <if test="publicationDate != null">
+        publication_date,
+      </if>
+      <if test="publishedAddress != null">
+        published_address,
+      </if>
+      <if test="nationnalityId != null">
+        nationnality_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="bookName != null">
+        #{bookName,jdbcType=VARCHAR},
+      </if>
+      <if test="bookClassId != null">
+        #{bookClassId,jdbcType=VARCHAR},
+      </if>
+      <if test="authorId != null">
+        #{authorId,jdbcType=VARCHAR},
+      </if>
+      <if test="libraryId != null">
+        #{libraryId,jdbcType=VARCHAR},
+      </if>
+      <if test="shopId != null">
+        #{shopId,jdbcType=VARCHAR},
+      </if>
+      <if test="publisherId != null">
+        #{publisherId,jdbcType=VARCHAR},
+      </if>
+      <if test="bookCode != null">
+        #{bookCode,jdbcType=VARCHAR},
+      </if>
+      <if test="publicationDate != null">
+        #{publicationDate,jdbcType=VARCHAR},
+      </if>
+      <if test="publishedAddress != null">
+        #{publishedAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="nationnalityId != null">
+        #{nationnalityId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Book">
+    update tbl_book
+    <set>
+      <if test="bookName != null">
+        book_name = #{bookName,jdbcType=VARCHAR},
+      </if>
+      <if test="bookClassId != null">
+        book_class_id = #{bookClassId,jdbcType=VARCHAR},
+      </if>
+      <if test="authorId != null">
+        author_id = #{authorId,jdbcType=VARCHAR},
+      </if>
+      <if test="libraryId != null">
+        library_id = #{libraryId,jdbcType=VARCHAR},
+      </if>
+      <if test="shopId != null">
+        shop_id = #{shopId,jdbcType=VARCHAR},
+      </if>
+      <if test="publisherId != null">
+        publisher_id = #{publisherId,jdbcType=VARCHAR},
+      </if>
+      <if test="bookCode != null">
+        book_code = #{bookCode,jdbcType=VARCHAR},
+      </if>
+      <if test="publicationDate != null">
+        publication_date = #{publicationDate,jdbcType=VARCHAR},
+      </if>
+      <if test="publishedAddress != null">
+        published_address = #{publishedAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="nationnalityId != null">
+        nationnality_id = #{nationnalityId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Book">
+    update tbl_book
+    set book_name = #{bookName,jdbcType=VARCHAR},
+      book_class_id = #{bookClassId,jdbcType=VARCHAR},
+      author_id = #{authorId,jdbcType=VARCHAR},
+      library_id = #{libraryId,jdbcType=VARCHAR},
+      shop_id = #{shopId,jdbcType=VARCHAR},
+      publisher_id = #{publisherId,jdbcType=VARCHAR},
+      book_code = #{bookCode,jdbcType=VARCHAR},
+      publication_date = #{publicationDate,jdbcType=VARCHAR},
+      published_address = #{publishedAddress,jdbcType=VARCHAR},
+      nationnality_id = #{nationnalityId,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

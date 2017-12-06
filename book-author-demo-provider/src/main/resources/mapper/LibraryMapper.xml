@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.hfut.xc.bookauthordemo.provider.dao.LibraryMapper">
+  <resultMap id="BaseResultMap" type="cn.edu.hfut.xc.bookauthordemo.common.model.Library">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="library_name" jdbcType="VARCHAR" property="libraryName" />
+    <result column="library_address" jdbcType="VARCHAR" property="libraryAddress" />
+    <result column="library_nationality_id" jdbcType="VARCHAR" property="libraryNationalityId" />
+    <result column="library_bulid_time" jdbcType="VARCHAR" property="libraryBulidTime" />
+    <result column="library_life" jdbcType="VARCHAR" property="libraryLife" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, library_name, library_address, library_nationality_id, library_bulid_time, library_life
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_library
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from tbl_library
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Library">
+    insert into tbl_library (id, library_name, library_address, 
+      library_nationality_id, library_bulid_time, 
+      library_life)
+    values (#{id,jdbcType=VARCHAR}, #{libraryName,jdbcType=VARCHAR}, #{libraryAddress,jdbcType=VARCHAR}, 
+      #{libraryNationalityId,jdbcType=VARCHAR}, #{libraryBulidTime,jdbcType=VARCHAR}, 
+      #{libraryLife,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Library">
+    insert into tbl_library
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="libraryName != null">
+        library_name,
+      </if>
+      <if test="libraryAddress != null">
+        library_address,
+      </if>
+      <if test="libraryNationalityId != null">
+        library_nationality_id,
+      </if>
+      <if test="libraryBulidTime != null">
+        library_bulid_time,
+      </if>
+      <if test="libraryLife != null">
+        library_life,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="libraryName != null">
+        #{libraryName,jdbcType=VARCHAR},
+      </if>
+      <if test="libraryAddress != null">
+        #{libraryAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="libraryNationalityId != null">
+        #{libraryNationalityId,jdbcType=VARCHAR},
+      </if>
+      <if test="libraryBulidTime != null">
+        #{libraryBulidTime,jdbcType=VARCHAR},
+      </if>
+      <if test="libraryLife != null">
+        #{libraryLife,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Library">
+    update tbl_library
+    <set>
+      <if test="libraryName != null">
+        library_name = #{libraryName,jdbcType=VARCHAR},
+      </if>
+      <if test="libraryAddress != null">
+        library_address = #{libraryAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="libraryNationalityId != null">
+        library_nationality_id = #{libraryNationalityId,jdbcType=VARCHAR},
+      </if>
+      <if test="libraryBulidTime != null">
+        library_bulid_time = #{libraryBulidTime,jdbcType=VARCHAR},
+      </if>
+      <if test="libraryLife != null">
+        library_life = #{libraryLife,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Library">
+    update tbl_library
+    set library_name = #{libraryName,jdbcType=VARCHAR},
+      library_address = #{libraryAddress,jdbcType=VARCHAR},
+      library_nationality_id = #{libraryNationalityId,jdbcType=VARCHAR},
+      library_bulid_time = #{libraryBulidTime,jdbcType=VARCHAR},
+      library_life = #{libraryLife,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
