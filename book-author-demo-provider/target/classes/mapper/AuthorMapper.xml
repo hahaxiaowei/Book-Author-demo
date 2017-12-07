@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.hfut.xc.bookauthordemo.provider.dao.AuthorMapper">
+  <!--定义查询结果集-->
+  <resultMap id="BaseResultMap" type="cn.edu.hfut.xc.bookauthordemo.common.model.Author">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="phone_number" jdbcType="VARCHAR" property="phoneNumber" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="author_name" jdbcType="VARCHAR" property="authorName" />
+    <result column="age" jdbcType="VARCHAR" property="age" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="id_code" jdbcType="VARCHAR" property="idCode" />
+    <result column="personal_remark" jdbcType="VARCHAR" property="personalRemark" />
+    <result column="nationality_id" jdbcType="VARCHAR" property="nationalityId" />
+    <result column="nation" jdbcType="VARCHAR" property="nation" />
+    <result column="head_portrait" jdbcType="VARCHAR" property="headPortrait" />
+    <result column="qq_number" jdbcType="VARCHAR" property="qqNumber" />
+    <result column="wechat_number" jdbcType="VARCHAR" property="wechatNumber" />
+    <result column="sina_microblog_number" jdbcType="VARCHAR" property="sinaMicroblogNumber" />
+  </resultMap>
+  <!--定义基础数据集-->
+  <sql id="Base_Column_List">
+    id, phone_number, password, author_name, age, sex, address, id_code, personal_remark, 
+    nationality_id, nation, head_portrait, qq_number, wechat_number, sina_microblog_number
+  </sql>
+  <!--根据主键查询作者信息-->
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_author
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <!--根据主键删除作者信息-->
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from tbl_author
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <!--插入作者的信息-->
+  <insert id="insert" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Author">
+    insert into tbl_author (id, phone_number, password, 
+      author_name, age, sex, 
+      address, id_code, personal_remark, 
+      nationality_id, nation, head_portrait, 
+      qq_number, wechat_number, sina_microblog_number
+      )
+    values (#{id,jdbcType=VARCHAR}, #{phoneNumber,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{authorName,jdbcType=VARCHAR}, #{age,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{idCode,jdbcType=VARCHAR}, #{personalRemark,jdbcType=VARCHAR}, 
+      #{nationalityId,jdbcType=VARCHAR}, #{nation,jdbcType=VARCHAR}, #{headPortrait,jdbcType=VARCHAR}, 
+      #{qqNumber,jdbcType=VARCHAR}, #{wechatNumber,jdbcType=VARCHAR}, #{sinaMicroblogNumber,jdbcType=VARCHAR}
+      )
+  </insert>
+  <!--有条件插入作者的信息-->
+  <insert id="insertSelective" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Author">
+    insert into tbl_author
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="phoneNumber != null">
+        phone_number,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="authorName != null">
+        author_name,
+      </if>
+      <if test="age != null">
+        age,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="idCode != null">
+        id_code,
+      </if>
+      <if test="personalRemark != null">
+        personal_remark,
+      </if>
+      <if test="nationalityId != null">
+        nationality_id,
+      </if>
+      <if test="nation != null">
+        nation,
+      </if>
+      <if test="headPortrait != null">
+        head_portrait,
+      </if>
+      <if test="qqNumber != null">
+        qq_number,
+      </if>
+      <if test="wechatNumber != null">
+        wechat_number,
+      </if>
+      <if test="sinaMicroblogNumber != null">
+        sina_microblog_number,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNumber != null">
+        #{phoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="authorName != null">
+        #{authorName,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="idCode != null">
+        #{idCode,jdbcType=VARCHAR},
+      </if>
+      <if test="personalRemark != null">
+        #{personalRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="nationalityId != null">
+        #{nationalityId,jdbcType=VARCHAR},
+      </if>
+      <if test="nation != null">
+        #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="headPortrait != null">
+        #{headPortrait,jdbcType=VARCHAR},
+      </if>
+      <if test="qqNumber != null">
+        #{qqNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="wechatNumber != null">
+        #{wechatNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="sinaMicroblogNumber != null">
+        #{sinaMicroblogNumber,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <!--有条件的更新作者的信息-->
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Author">
+    update tbl_author
+    <set>
+      <if test="phoneNumber != null">
+        phone_number = #{phoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="authorName != null">
+        author_name = #{authorName,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        age = #{age,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="idCode != null">
+        id_code = #{idCode,jdbcType=VARCHAR},
+      </if>
+      <if test="personalRemark != null">
+        personal_remark = #{personalRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="nationalityId != null">
+        nationality_id = #{nationalityId,jdbcType=VARCHAR},
+      </if>
+      <if test="nation != null">
+        nation = #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="headPortrait != null">
+        head_portrait = #{headPortrait,jdbcType=VARCHAR},
+      </if>
+      <if test="qqNumber != null">
+        qq_number = #{qqNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="wechatNumber != null">
+        wechat_number = #{wechatNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="sinaMicroblogNumber != null">
+        sina_microblog_number = #{sinaMicroblogNumber,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <!--根据主键更新作者的信息-->
+  <update id="updateByPrimaryKey" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Author">
+    update tbl_author
+    set phone_number = #{phoneNumber,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      author_name = #{authorName,jdbcType=VARCHAR},
+      age = #{age,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      id_code = #{idCode,jdbcType=VARCHAR},
+      personal_remark = #{personalRemark,jdbcType=VARCHAR},
+      nationality_id = #{nationalityId,jdbcType=VARCHAR},
+      nation = #{nation,jdbcType=VARCHAR},
+      head_portrait = #{headPortrait,jdbcType=VARCHAR},
+      qq_number = #{qqNumber,jdbcType=VARCHAR},
+      wechat_number = #{wechatNumber,jdbcType=VARCHAR},
+      sina_microblog_number = #{sinaMicroblogNumber,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

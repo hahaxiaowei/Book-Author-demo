@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.hfut.xc.bookauthordemo.provider.dao.ShopOwnerMapper">
+  <resultMap id="BaseResultMap" type="cn.edu.hfut.xc.bookauthordemo.common.model.ShopOwner">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="shop_owner_name" jdbcType="VARCHAR" property="shopOwnerName" />
+    <result column="shop_owner_sex" jdbcType="VARCHAR" property="shopOwnerSex" />
+    <result column="shop_owner_age" jdbcType="VARCHAR" property="shopOwnerAge" />
+    <result column="shop_owner_address" jdbcType="VARCHAR" property="shopOwnerAddress" />
+    <result column="shop_owner_nation" jdbcType="VARCHAR" property="shopOwnerNation" />
+    <result column="shop_owner_nationality_id" jdbcType="VARCHAR" property="shopOwnerNationalityId" />
+    <result column="shop_owner_remark" jdbcType="VARCHAR" property="shopOwnerRemark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, shop_owner_name, shop_owner_sex, shop_owner_age, shop_owner_address, shop_owner_nation, 
+    shop_owner_nationality_id, shop_owner_remark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_shopowner
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from tbl_shopowner
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.ShopOwner">
+    insert into tbl_shopowner (id, shop_owner_name, shop_owner_sex, 
+      shop_owner_age, shop_owner_address, shop_owner_nation, 
+      shop_owner_nationality_id, shop_owner_remark
+      )
+    values (#{id,jdbcType=VARCHAR}, #{shopOwnerName,jdbcType=VARCHAR}, #{shopOwnerSex,jdbcType=VARCHAR}, 
+      #{shopOwnerAge,jdbcType=VARCHAR}, #{shopOwnerAddress,jdbcType=VARCHAR}, #{shopOwnerNation,jdbcType=VARCHAR}, 
+      #{shopOwnerNationalityId,jdbcType=VARCHAR}, #{shopOwnerRemark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.ShopOwner">
+    insert into tbl_shopowner
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="shopOwnerName != null">
+        shop_owner_name,
+      </if>
+      <if test="shopOwnerSex != null">
+        shop_owner_sex,
+      </if>
+      <if test="shopOwnerAge != null">
+        shop_owner_age,
+      </if>
+      <if test="shopOwnerAddress != null">
+        shop_owner_address,
+      </if>
+      <if test="shopOwnerNation != null">
+        shop_owner_nation,
+      </if>
+      <if test="shopOwnerNationalityId != null">
+        shop_owner_nationality_id,
+      </if>
+      <if test="shopOwnerRemark != null">
+        shop_owner_remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="shopOwnerName != null">
+        #{shopOwnerName,jdbcType=VARCHAR},
+      </if>
+      <if test="shopOwnerSex != null">
+        #{shopOwnerSex,jdbcType=VARCHAR},
+      </if>
+      <if test="shopOwnerAge != null">
+        #{shopOwnerAge,jdbcType=VARCHAR},
+      </if>
+      <if test="shopOwnerAddress != null">
+        #{shopOwnerAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="shopOwnerNation != null">
+        #{shopOwnerNation,jdbcType=VARCHAR},
+      </if>
+      <if test="shopOwnerNationalityId != null">
+        #{shopOwnerNationalityId,jdbcType=VARCHAR},
+      </if>
+      <if test="shopOwnerRemark != null">
+        #{shopOwnerRemark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.ShopOwner">
+    update tbl_shopowner
+    <set>
+      <if test="shopOwnerName != null">
+        shop_owner_name = #{shopOwnerName,jdbcType=VARCHAR},
+      </if>
+      <if test="shopOwnerSex != null">
+        shop_owner_sex = #{shopOwnerSex,jdbcType=VARCHAR},
+      </if>
+      <if test="shopOwnerAge != null">
+        shop_owner_age = #{shopOwnerAge,jdbcType=VARCHAR},
+      </if>
+      <if test="shopOwnerAddress != null">
+        shop_owner_address = #{shopOwnerAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="shopOwnerNation != null">
+        shop_owner_nation = #{shopOwnerNation,jdbcType=VARCHAR},
+      </if>
+      <if test="shopOwnerNationalityId != null">
+        shop_owner_nationality_id = #{shopOwnerNationalityId,jdbcType=VARCHAR},
+      </if>
+      <if test="shopOwnerRemark != null">
+        shop_owner_remark = #{shopOwnerRemark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.ShopOwner">
+    update tbl_shopowner
+    set shop_owner_name = #{shopOwnerName,jdbcType=VARCHAR},
+      shop_owner_sex = #{shopOwnerSex,jdbcType=VARCHAR},
+      shop_owner_age = #{shopOwnerAge,jdbcType=VARCHAR},
+      shop_owner_address = #{shopOwnerAddress,jdbcType=VARCHAR},
+      shop_owner_nation = #{shopOwnerNation,jdbcType=VARCHAR},
+      shop_owner_nationality_id = #{shopOwnerNationalityId,jdbcType=VARCHAR},
+      shop_owner_remark = #{shopOwnerRemark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <classPathEntry location="D:\JDBC驱动\mysql-connector-java-5.0.4-bin.jar" />
+    <context id="MyTables" targetRuntime="MyBatis3">
+        <!--去掉英文注释的配置，并且这个配置要放在数据库配置的前面，不然会报错-->
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+        <!--数据库相关的配置，包括，mysql的驱动位置，mysql的数据库地址，数据库的名字，数据库的账号和密码-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/db_book?useUnicode=true&amp;characterEncoding=UTF-8"
+                        userId="root"
+                        password="sunwei">
+        </jdbcConnection>
+
+        <!--<javaTypeResolver >-->
+            <!--<property name="forceBigDecimals" value="false" />-->
+        <!--</javaTypeResolver>-->
+
+        <!--设置实体类的生成位置-->
+        <javaModelGenerator targetPackage="cn.edu.hfut.xc.bookauthordemo.common.model" targetProject="D:\CompanyProjectTraining\Book-Author-demo\book-author-demo-common\src\main\java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <!--设置mapper文件的生成目录-->
+        <sqlMapGenerator targetPackage="mapper"  targetProject="D:\CompanyProjectTraining\Book-Author-demo\book-author-demo-provider\src\main\resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+        <!--设置dao层的文件目录-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.edu.hfut.xc.bookauthordemo.provider.dao" targetProject="D:\CompanyProjectTraining\Book-Author-demo\book-author-demo-provider\src\main\java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+        <!--这里设置为不允许生成example类，因为生成的examplel类方法，好多都用不到因此，在这里可以让自动生成的example类默认不自动生成-->
+        <table schema="db_book" tableName="nationality" domainObjectName="Nationality" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false">
+            <!--<property name="useActualColumnNames" value="true"/>-->
+            <!--<generatedKey column="ID" sqlStatement="DB2" identity="true" />-->
+            <!--<columnOverride column="DATE_FIELD" property="startDate" />-->
+            <!--<ignoreColumn column="FRED" />-->
+            <!--<columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" />-->
+        </table>
+    </context>
+</generatorConfiguration>
