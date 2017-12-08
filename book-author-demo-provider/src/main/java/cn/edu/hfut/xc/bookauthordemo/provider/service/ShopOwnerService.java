@@ -1,8 +1,12 @@
-package cn.edu.hfut.xc.bookauthordemo.provider.dao;
+package cn.edu.hfut.xc.bookauthordemo.provider.service;
 
 import cn.edu.hfut.xc.bookauthordemo.common.model.ShopOwner;
 
-public interface ShopOwnerMapper {
+/**
+ * Created by sunwei on 2017/12/8 Time:9:42
+ */
+public interface ShopOwnerService {
+
     /**
      * 根据主键删除店主信息
      * @param id

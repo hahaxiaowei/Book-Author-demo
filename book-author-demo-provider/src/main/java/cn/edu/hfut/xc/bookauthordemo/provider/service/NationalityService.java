@@ -1,8 +1,11 @@
-package cn.edu.hfut.xc.bookauthordemo.provider.dao;
+package cn.edu.hfut.xc.bookauthordemo.provider.service;
 
 import cn.edu.hfut.xc.bookauthordemo.common.model.Nationality;
 
-public interface NationalityMapper {
+/**
+ * Created by sunwei on 2017/12/8 Time:9:41
+ */
+public interface NationalityService {
     /**
      * 根据主键删除国籍信息
      * @param id

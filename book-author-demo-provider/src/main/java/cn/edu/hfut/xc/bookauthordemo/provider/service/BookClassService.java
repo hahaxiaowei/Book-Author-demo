@@ -1,8 +1,12 @@
-package cn.edu.hfut.xc.bookauthordemo.provider.dao;
+package cn.edu.hfut.xc.bookauthordemo.provider.service;
 
 import cn.edu.hfut.xc.bookauthordemo.common.model.BookClass;
 
-public interface BookClassMapper {
+/**
+ * Created by sunwei on 2017/12/8 Time:9:40
+ */
+public interface BookClassService {
+
     /**
      * 根据id删除类别
      * @param id

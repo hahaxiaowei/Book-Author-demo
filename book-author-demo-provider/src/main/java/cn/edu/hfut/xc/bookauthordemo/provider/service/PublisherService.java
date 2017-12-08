@@ -1,8 +1,12 @@
-package cn.edu.hfut.xc.bookauthordemo.provider.dao;
+package cn.edu.hfut.xc.bookauthordemo.provider.service;
 
 import cn.edu.hfut.xc.bookauthordemo.common.model.Publisher;
 
-public interface PublisherMapper {
+/**
+ * Created by sunwei on 2017/12/8 Time:9:41
+ */
+public interface PublisherService {
+
     /**
      * 根据主键删除出版商信息
      * @param id

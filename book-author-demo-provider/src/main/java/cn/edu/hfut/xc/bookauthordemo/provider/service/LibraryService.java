@@ -1,8 +1,12 @@
-package cn.edu.hfut.xc.bookauthordemo.provider.dao;
+package cn.edu.hfut.xc.bookauthordemo.provider.service;
 
 import cn.edu.hfut.xc.bookauthordemo.common.model.Library;
 
-public interface LibraryMapper {
+/**
+ * Created by sunwei on 2017/12/8 Time:9:40
+ */
+public interface LibraryService {
+
     /**
      * 根据id删除图书馆信息
      * @param id

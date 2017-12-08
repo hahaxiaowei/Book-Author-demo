@@ -1,8 +1,12 @@
-package cn.edu.hfut.xc.bookauthordemo.provider.dao;
+package cn.edu.hfut.xc.bookauthordemo.provider.service;
 
 import cn.edu.hfut.xc.bookauthordemo.common.model.Shop;
 
-public interface ShopMapper {
+/**
+ * Created by sunwei on 2017/12/8 Time:9:42
+ */
+public interface ShopService {
+
     /**
      * 根据主键删除商店信息
      * @param id
