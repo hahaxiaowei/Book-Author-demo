@@ -13,8 +13,6 @@ public class Shop {
 
     private String shopNationalityId;
 
-    private String shopOwnerId;
-
     public String getId() {
         return id;
     }
@@ -61,13 +59,5 @@ public class Shop {
 
     public void setShopNationalityId(String shopNationalityId) {
         this.shopNationalityId = shopNationalityId == null ? null : shopNationalityId.trim();
-    }
-
-    public String getShopOwnerId() {
-        return shopOwnerId;
-    }
-
-    public void setShopOwnerId(String shopOwnerId) {
-        this.shopOwnerId = shopOwnerId == null ? null : shopOwnerId.trim();
     }
 }

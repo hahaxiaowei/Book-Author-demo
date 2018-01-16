@@ -1,6 +1,7 @@
 package cn.edu.hfut.xc.bookauthordemo.provider.service;
 
 import cn.edu.hfut.xc.bookauthordemo.common.model.Book;
+import cn.edu.hfut.xc.bookauthordemo.common.util.Pagination;
 
 /**
  * Created by sunwei on 2017/12/6 Time:17:25
@@ -34,6 +35,15 @@ public interface BookService {
      * @return
      */
     Book selectByPrimaryKey(String id);
+
+    /**
+     * 分页查询
+     * @param bookName
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
+    Pagination<Book> selectPageQuery (String bookName, int pageNum , int pageSize);
 
     /**
      * 有条件的更新图书信息

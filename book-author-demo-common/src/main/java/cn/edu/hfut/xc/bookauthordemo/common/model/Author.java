@@ -1,79 +1,38 @@
 package cn.edu.hfut.xc.bookauthordemo.common.model;
 
 public class Author {
-    /**
-     * 作者的id
-     */
     private String id;
 
-    /**
-     * 作者的手机号
-     */
-    private String phoneNumber;
-
-    /**
-     * 作者的账号密码
-     */
-    private String password;
-
-    /**
-     * 作者的名字
-     */
     private String authorName;
 
-    /**
-     * 作者的年龄
-     */
+    private String phoneNumber;
+
+    private String emailNumber;
+
+    private String userName;
+
+    private String password;
+
     private String age;
 
-    /**
-     * 作者的性别
-     */
     private String sex;
 
-    /**
-     * 作者的所在地
-     */
     private String address;
 
-    /**
-     * 作者的身份证号
-     */
     private String idCode;
 
-    /**
-     * 作者的个人个人简介
-     */
     private String personalRemark;
 
-    /**
-     * 作者的国籍
-     */
     private String nationalityId;
 
-    /**
-     * 作者的民族
-     */
     private String nation;
 
-    /**
-     * 作者的头像存放位置
-     */
     private String headPortrait;
 
-    /**
-     * 作者的QQ号
-     */
     private String qqNumber;
 
-    /**
-     * 作者的微信号
-     */
     private String wechatNumber;
 
-    /**
-     * 作者的新浪微博账号
-     */
     private String sinaMicroblogNumber;
 
     public String getId() {
@@ -84,6 +43,14 @@ public class Author {
         this.id = id == null ? null : id.trim();
     }
 
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName == null ? null : authorName.trim();
+    }
+
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -92,20 +59,28 @@ public class Author {
         this.phoneNumber = phoneNumber == null ? null : phoneNumber.trim();
     }
 
+    public String getEmailNumber() {
+        return emailNumber;
+    }
+
+    public void setEmailNumber(String emailNumber) {
+        this.emailNumber = emailNumber;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
         this.password = password == null ? null : password.trim();
-    }
-
-    public String getAuthorName() {
-        return authorName;
-    }
-
-    public void setAuthorName(String authorName) {
-        this.authorName = authorName == null ? null : authorName.trim();
     }
 
     public String getAge() {

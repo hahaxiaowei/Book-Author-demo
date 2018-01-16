@@ -1,47 +1,28 @@
 package cn.edu.hfut.xc.bookauthordemo.provider.dao;
 
 import cn.edu.hfut.xc.bookauthordemo.common.model.Nationality;
+import cn.edu.hfut.xc.bookauthordemo.common.model.NationalityExample;
+import java.util.List;
 
 public interface NationalityMapper {
-    /**
-     * 根据主键删除国籍信息
-     * @param id
-     * @return
-     */
+    long countByExample(NationalityExample example);
+
     int deleteByPrimaryKey(String id);
 
-    /**
-     * 插入国籍信息
-     * @param record
-     * @return
-     */
     int insert(Nationality record);
 
-    /**
-     * 有条件的插入国籍信息
-     * @param record
-     * @return
-     */
     int insertSelective(Nationality record);
 
-    /**
-     * 根据主键查询国籍信息
-     * @param id
-     * @return
-     */
+    List<Nationality> selectByExample(NationalityExample example);
+
     Nationality selectByPrimaryKey(String id);
 
-    /**
-     * 有条件更新国籍信息
-     * @param record
-     * @return
-     */
     int updateByPrimaryKeySelective(Nationality record);
 
-    /**
-     * 根据主键更新国籍信息
-     * @param record
-     * @return
-     */
     int updateByPrimaryKey(Nationality record);
+
+    /**
+     * 根据国籍表里面的某个字段查询数据
+     */
+    List<Nationality> selectByColumn(Nationality nationality);
 }

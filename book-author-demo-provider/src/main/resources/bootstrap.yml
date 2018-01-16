@@ -1,15 +1,15 @@
 server:
   port: 8800
+spring:
+  application:
+    name: book-author-demo-provider
 eureka:
   instance:
     preferIpAddress: true
     instanceId: ${spring.application.name}:${server.port}
   client:
     serviceUrl:
-      defaultZone: http://10.3.99.25:1111/eureka/  #注册中心地址
-spring:
-  application:
-    name: bookauthordemo-provider
+      defaultZone: http://10.3.99.25:8801/eureka/  #注册中心地址
 #druid:
 #  boot:
 #    admin:
@@ -34,6 +34,9 @@ druid:
     testOnBrowwon: false
     testOnReturn: false
     filters: stat,wall
+
+redisTimeoutSeconds : 60 60 24 7
+redisNodes: 10.3.98.153:7000,10.3.98.153:7001,10.3.98.154:7002,10.3.98.154:7003,10.3.98.155:7004,10.3.98.155:7005
 
 mybatis:
   mapperLocations: classpath:mapper/*.xml

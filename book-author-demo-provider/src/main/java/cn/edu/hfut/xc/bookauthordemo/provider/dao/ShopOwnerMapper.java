@@ -1,47 +1,31 @@
 package cn.edu.hfut.xc.bookauthordemo.provider.dao;
 
+import cn.edu.hfut.xc.bookauthordemo.common.model.Shop;
 import cn.edu.hfut.xc.bookauthordemo.common.model.ShopOwner;
+import cn.edu.hfut.xc.bookauthordemo.common.model.ShopOwnerExample;
+import java.util.List;
 
 public interface ShopOwnerMapper {
-    /**
-     * 根据主键删除店主信息
-     * @param id
-     * @return
-     */
+    long countByExample(ShopOwnerExample example);
+
     int deleteByPrimaryKey(String id);
 
-    /**
-     * 插入店主信息
-     * @param record
-     * @return
-     */
     int insert(ShopOwner record);
 
-    /**
-     * 有条件的插入店主信息
-     * @param record
-     * @return
-     */
     int insertSelective(ShopOwner record);
 
-    /**
-     * 根据主键查询店主信息
-     * @param id
-     * @return
-     */
+    List<ShopOwner> selectByExample(ShopOwnerExample example);
+
     ShopOwner selectByPrimaryKey(String id);
 
-    /**
-     * 有条件的更新店主信息
-     * @param record
-     * @return
-     */
     int updateByPrimaryKeySelective(ShopOwner record);
 
+    int updateByPrimaryKey(ShopOwner record);
+
     /**
-     * 更新店主信息
-     * @param record
+     * 根据店主的某个字段来查询数据
+     * @param shopOwner
      * @return
      */
-    int updateByPrimaryKey(ShopOwner record);
+    List<ShopOwner> selectByColumn(ShopOwner shopOwner);
 }

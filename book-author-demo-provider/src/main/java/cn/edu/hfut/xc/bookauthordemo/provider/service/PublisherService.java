@@ -1,6 +1,8 @@
 package cn.edu.hfut.xc.bookauthordemo.provider.service;
 
+import cn.edu.hfut.xc.bookauthordemo.common.model.Nationality;
 import cn.edu.hfut.xc.bookauthordemo.common.model.Publisher;
+import cn.edu.hfut.xc.bookauthordemo.common.util.Pagination;
 
 /**
  * Created by sunwei on 2017/12/8 Time:9:41
@@ -34,6 +36,15 @@ public interface PublisherService {
      * @return
      */
     Publisher selectByPrimaryKey(String id);
+
+    /**
+     * 分页查询
+     * @param publisherName
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
+    Pagination<Publisher> selectPageQuery (String publisherName, int pageNum , int pageSize);
 
     /**
      * 有条件的更新出版商信息

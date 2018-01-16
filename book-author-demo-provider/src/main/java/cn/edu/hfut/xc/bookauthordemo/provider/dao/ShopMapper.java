@@ -1,47 +1,30 @@
 package cn.edu.hfut.xc.bookauthordemo.provider.dao;
 
 import cn.edu.hfut.xc.bookauthordemo.common.model.Shop;
+import cn.edu.hfut.xc.bookauthordemo.common.model.ShopExample;
+import java.util.List;
 
 public interface ShopMapper {
-    /**
-     * 根据主键删除商店信息
-     * @param id
-     * @return
-     */
+    long countByExample(ShopExample example);
+
     int deleteByPrimaryKey(String id);
 
-    /**
-     * 插入商店信息
-     * @param record
-     * @return
-     */
     int insert(Shop record);
 
-    /**
-     * 有条件的插入商店信息
-     * @param record
-     * @return
-     */
     int insertSelective(Shop record);
 
-    /**
-     * 根据主键查询商店信息
-     * @param id
-     * @return
-     */
+    List<Shop> selectByExample(ShopExample example);
+
     Shop selectByPrimaryKey(String id);
 
-    /**
-     * 有条件的更新商店信息
-     * @param record
-     * @return
-     */
     int updateByPrimaryKeySelective(Shop record);
 
+    int updateByPrimaryKey(Shop record);
+
     /**
-     * 更新商店信息
-     * @param record
+     * 根据商店里面某个字段来查询数据
+     * @param shop
      * @return
      */
-    int updateByPrimaryKey(Shop record);
+    List<Shop> selectByColumn(Shop shop);
 }

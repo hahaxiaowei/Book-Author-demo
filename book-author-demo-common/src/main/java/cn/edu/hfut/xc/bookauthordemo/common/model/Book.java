@@ -7,12 +7,6 @@ public class Book {
 
     private String bookClassId;
 
-    private String authorId;
-
-    private String libraryId;
-
-    private String shopId;
-
     private String publisherId;
 
     private String bookCode;
@@ -20,8 +14,6 @@ public class Book {
     private String publicationDate;
 
     private String publishedAddress;
-
-    private String nationnalityId;
 
     public String getId() {
         return id;
@@ -45,30 +37,6 @@ public class Book {
 
     public void setBookClassId(String bookClassId) {
         this.bookClassId = bookClassId == null ? null : bookClassId.trim();
-    }
-
-    public String getAuthorId() {
-        return authorId;
-    }
-
-    public void setAuthorId(String authorId) {
-        this.authorId = authorId == null ? null : authorId.trim();
-    }
-
-    public String getLibraryId() {
-        return libraryId;
-    }
-
-    public void setLibraryId(String libraryId) {
-        this.libraryId = libraryId == null ? null : libraryId.trim();
-    }
-
-    public String getShopId() {
-        return shopId;
-    }
-
-    public void setShopId(String shopId) {
-        this.shopId = shopId == null ? null : shopId.trim();
     }
 
     public String getPublisherId() {
@@ -101,13 +69,5 @@ public class Book {
 
     public void setPublishedAddress(String publishedAddress) {
         this.publishedAddress = publishedAddress == null ? null : publishedAddress.trim();
-    }
-
-    public String getNationnalityId() {
-        return nationnalityId;
-    }
-
-    public void setNationnalityId(String nationnalityId) {
-        this.nationnalityId = nationnalityId == null ? null : nationnalityId.trim();
     }
 }

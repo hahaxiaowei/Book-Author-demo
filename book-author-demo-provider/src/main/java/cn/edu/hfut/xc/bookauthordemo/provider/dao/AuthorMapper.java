@@ -1,47 +1,60 @@
 package cn.edu.hfut.xc.bookauthordemo.provider.dao;
 
 import cn.edu.hfut.xc.bookauthordemo.common.model.Author;
+import cn.edu.hfut.xc.bookauthordemo.common.model.AuthorExample;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
+import java.util.Map;
 
 public interface AuthorMapper {
-    /**
-     * 根据主键查询作者信息
-     * @param id
-     * @return
-     */
+    long countByExample(AuthorExample example);
+
     int deleteByPrimaryKey(String id);
 
-    /**
-     * 插入作者信息
-     * @param record
-     * @return
-     */
     int insert(Author record);
 
-    /**
-     * 有条件的插入作者信息
-     * @param record
-     * @return
-     */
     int insertSelective(Author record);
 
-    /**
-     * 根据主键查询作者信息
-     * @param id
-     * @return
-     */
+    List<Author> selectByExample(AuthorExample example);
+
     Author selectByPrimaryKey(String id);
 
-    /**
-     * 有条件更新作者信息
-     * @param record
-     * @return
-     */
     int updateByPrimaryKeySelective(Author record);
 
+    int updateByPrimaryKey(Author record);
+
     /**
-     * 根据作者的主键更新作者信息
-     * @param record
+     * 根据某个字段来查询数据
+     */
+    List<Author> selectByColumn(Author author);
+
+    /**
+     * 根据手机号查询作者信息
+     * @param phoneNumber
+     * @return Author
+     */
+    Author selectByPhoneNumber(String phoneNumber);
+
+    /**
+     * 根据邮箱号查询作者信息
+     * @param emailNumber
+     * @return Author
+     */
+    Author selectByEmailNumber(String emailNumber);
+
+    /**
+     * 根据用户名查询作者信息
+     * @param userName
+     * @return Author
+     */
+    Author selectByUserName(String userName);
+
+    /**
+     * 根据身份证号查询作者信息
+     * @param idCode
      * @return
      */
-    int updateByPrimaryKey(Author record);
+    Author selectByIDCard(String idCode);
 }

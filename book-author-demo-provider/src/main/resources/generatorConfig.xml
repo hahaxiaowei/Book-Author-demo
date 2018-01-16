@@ -36,8 +36,8 @@
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
         <!--这里设置为不允许生成example类，因为生成的examplel类方法，好多都用不到因此，在这里可以让自动生成的example类默认不自动生成-->
-        <table schema="db_book" tableName="nationality" domainObjectName="Nationality" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" selectByExampleQueryId="false">
+        <table schema="db_book" tableName="tbl_Author" domainObjectName="Author" enableCountByExample="true" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="true" selectByExampleQueryId="true">
             <!--<property name="useActualColumnNames" value="true"/>-->
             <!--<generatedKey column="ID" sqlStatement="DB2" identity="true" />-->
             <!--<columnOverride column="DATE_FIELD" property="startDate" />-->

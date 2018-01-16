@@ -1,0 +1,12 @@
+server:
+  port: 8802
+spring:
+  application:
+    name: book-author-demo-client
+eureka:
+  instance:
+    preferIpAddress: true
+    instanceId: ${spring.application.name}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://10.3.99.25:8801/eureka/  #注册中心地址
