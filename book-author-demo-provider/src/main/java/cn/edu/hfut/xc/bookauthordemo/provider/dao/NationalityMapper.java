@@ -25,4 +25,9 @@ public interface NationalityMapper {
      * 根据国籍表里面的某个字段查询数据
      */
     List<Nationality> selectByColumn(Nationality nationality);
+
+    /**
+     * 查询所有国籍信息
+     */
+    List<Nationality> selectAll();
 }

@@ -120,6 +120,14 @@
       <include refid="Example_Where_Clause" />
     </if>
   </select>
+
+  <!--查询所有信息-->
+  <select id="selectAll" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.BookWithShop" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    from tbl_book_shop
+  </select>
+
   <update id="updateByPrimaryKeySelective" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.BookWithShop">
     update tbl_book_shop
     <set>

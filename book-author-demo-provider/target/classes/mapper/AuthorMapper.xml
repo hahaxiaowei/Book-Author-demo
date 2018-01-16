@@ -165,6 +165,12 @@
     where id_code = #{idCode,jdbcType=VARCHAR}
   </select>
 
+  <select id="selectAll" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Author" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    from tbl_author
+  </select>
+
   <!--根据主键删除作者信息-->
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from tbl_author

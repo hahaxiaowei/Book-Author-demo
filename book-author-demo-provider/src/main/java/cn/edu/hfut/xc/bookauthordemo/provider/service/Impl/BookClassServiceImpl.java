@@ -1,5 +1,6 @@
 package cn.edu.hfut.xc.bookauthordemo.provider.service.Impl;
 
+import cn.edu.hfut.xc.bookauthordemo.common.model.AuthorWithBook;
 import cn.edu.hfut.xc.bookauthordemo.common.model.BookClass;
 import cn.edu.hfut.xc.bookauthordemo.common.model.BookClassExample;
 import cn.edu.hfut.xc.bookauthordemo.common.util.Pagination;
@@ -66,5 +67,10 @@ public class BookClassServiceImpl implements BookClassService{
     @Override
     public int updateByPrimaryKey(BookClass record) {
         return bookClassMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public List<BookClass> selectAll() {
+        return bookClassMapper.selectAll();
     }
 }

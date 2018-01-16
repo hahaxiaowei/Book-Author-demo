@@ -61,6 +61,14 @@
     from tbl_book_nationality
     where id = #{id,jdbcType=VARCHAR}
   </select>
+
+  <!--查询所有信息-->
+  <select id="selectAll" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.BookWithNationality" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    from tbl_book_nationality
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from tbl_book_nationality
     where id = #{id,jdbcType=VARCHAR}

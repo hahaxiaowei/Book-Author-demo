@@ -83,6 +83,14 @@
     </where>
   </select>
 
+
+  <!--查询所有国籍信息-->
+  <select id="selectAll" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Nationality" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    from nationality
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from nationality
     where id = #{id,jdbcType=VARCHAR}

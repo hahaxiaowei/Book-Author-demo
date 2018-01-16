@@ -1,8 +1,9 @@
 package cn.edu.hfut.xc.bookauthordemo.provider.service;
 
-import cn.edu.hfut.xc.bookauthordemo.common.model.Author;
 import cn.edu.hfut.xc.bookauthordemo.common.model.BookClass;
 import cn.edu.hfut.xc.bookauthordemo.common.util.Pagination;
+
+import java.util.List;
 
 /**
  * Created by sunwei on 2017/12/8 Time:9:40
@@ -59,5 +60,10 @@ public interface BookClassService {
      * @return
      */
     int updateByPrimaryKey(BookClass record);
+
+    /**
+     * 查询所有信息
+     */
+    List<BookClass> selectAll();
 
 }

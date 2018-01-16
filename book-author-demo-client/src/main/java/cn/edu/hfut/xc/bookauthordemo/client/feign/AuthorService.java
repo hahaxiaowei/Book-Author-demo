@@ -114,4 +114,7 @@ public interface AuthorService {
 
     @RequestMapping(value = "/author/isVerificatCorrect", method = RequestMethod.GET)
     Boolean isVerificatCorrect(@RequestParam(value = "verificationCode") String verificationCode, @RequestParam(value = "phoneNum") String phoneNum);
+
+    @RequestMapping(value ="/author/selectAll",method = RequestMethod.GET)
+    Result selectAll();
 }

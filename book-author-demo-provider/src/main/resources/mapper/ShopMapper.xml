@@ -63,6 +63,13 @@
     where id = #{id,jdbcType=VARCHAR}
   </select>
 
+  <!--查询所有信息-->
+  <select id="selectAll" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Shop" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    from tbl_shop
+  </select>
+
   <!--根据图书馆表中的某个字段查询数据-->
   <select id="selectByColumn" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Shop" resultMap="BaseResultMap">
     select

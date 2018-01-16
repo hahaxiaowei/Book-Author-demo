@@ -10,6 +10,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * Created by sunwei on 2017/12/8 Time:9:47
  */
@@ -101,8 +103,8 @@ public class NationalityController {
      * @description 根据主键更新图书馆信息
      * @method updateByPrimaryKey
      */
-    @RequestMapping(value = "/updateByPrimaryKey" ,method = RequestMethod.PUT)
-    public Result updateByPrimaryKey(@RequestBody Nationality nationality){
+    @RequestMapping(value = "/updateByPrimaryKey", method = RequestMethod.PUT)
+    public Result updateByPrimaryKey(@RequestBody Nationality nationality) {
 
         Result result = new Result();
         try {
@@ -112,7 +114,7 @@ public class NationalityController {
         } catch (Exception e) {
             result.setRetCode(Result.RECODE_ERROR);
             result.setErrMsg("updateByPrimaryKey执行异常");
-            logger.error("方法执行异常"+ e.getMessage() + e);
+            logger.error("方法执行异常" + e.getMessage() + e);
             throw new RuntimeException(e);
         }
         return result;
@@ -124,8 +126,8 @@ public class NationalityController {
      * @description 根据主键查询国籍信息
      * @method selectByPrimaryKey
      */
-    @RequestMapping(value ="/selectByPrimaryKey/{id}",method = RequestMethod.GET)
-    public Result selectByPrimaryKey(@PathVariable String id){
+    @RequestMapping(value = "/selectByPrimaryKey/{id}", method = RequestMethod.GET)
+    public Result selectByPrimaryKey(@PathVariable String id) {
         Result result = new Result();
         try {
             if (StringUtil.isNullOrEmpty(id)) {
@@ -138,7 +140,7 @@ public class NationalityController {
         } catch (Exception e) {
             result.setRetCode(Result.RECODE_ERROR);
             result.setErrMsg("方法执行异常");
-            logger.error("方法执行异常"+ e.getMessage() + e);
+            logger.error("方法执行异常" + e.getMessage() + e);
             throw new RuntimeException(e);
         }
         return result;
@@ -146,25 +148,67 @@ public class NationalityController {
 
     /**
      * @param nationalityName
-     * @param pageNum
-     * @param pageSize
+     * @param pageNum
+     * @param pageSize
      * @return cn.edu.hfut.xc.bookauthordemo.common.util.Result
      * @description 根据国籍名字查询国籍信息
      * @method selectPageQuery
      */
-    @RequestMapping(value = "/selectPageQuery",method = RequestMethod.GET)
-    public Result selectPageQuery(@RequestParam(required = false,defaultValue = "") String nationalityName,
-                                  @RequestParam(defaultValue = "1") int pageNum ,
-                                  @RequestParam(defaultValue = "15") int pageSize){
+    @RequestMapping(value = "/selectPageQuery", method = RequestMethod.GET)
+    public Result selectPageQuery(@RequestParam(required = false, defaultValue = "") String nationalityName,
+                                  @RequestParam(defaultValue = "1") int pageNum,
+                                  @RequestParam(defaultValue = "15") int pageSize) {
         Result result = new Result();
         try {
-            Pagination<Nationality> pagination = nationalityService.selectPageQuery(nationalityName,pageNum,pageSize);
+            Pagination<Nationality> pagination = nationalityService.selectPageQuery(nationalityName, pageNum, pageSize);
             result.setRetCode(Result.RECODE_SUCCESS);
             result.setData(pagination);
         } catch (Exception e) {
             result.setRetCode(Result.RECODE_ERROR);
             result.setErrMsg("selectPageQuery方法执行异常");
-            logger.error("selectPageQuery方法执行异常"+ e.getMessage() + e);
+            logger.error("selectPageQuery方法执行异常" + e.getMessage() + e);
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+
+    /**
+     * @param nationality
+     * @return cn.edu.hfut.xc.bookauthordemo.common.util.Result
+     * @description 根据国籍某个字段来查询国籍信息
+     * @method selectByColumn
+     */
+    @RequestMapping(value = "/selectColumn", method = RequestMethod.GET)
+    public Result selectByColumn(@RequestBody Nationality nationality) {
+
+        Result result = new Result();
+        try {
+            List<Nationality> list = nationalityService.selectByColumn(nationality);
+            result.setData(list);
+        } catch (Exception e) {
+            result.setRetCode(Result.RECODE_ERROR);
+            result.setErrMsg("方法执行出错" + e);
+            logger.error("方法执行出错", e);
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+
+    /**
+     * @return cn.edu.hfut.xc.bookauthordemo.common.util.Result
+     * @description 根据国籍某个字段来查询国籍信息
+     * @method selectByColumn
+     */
+    @RequestMapping(value = "/selectAll", method = RequestMethod.GET)
+    public Result selectAll(){
+        Result result = new Result();
+        try {
+            List<Nationality> list = nationalityService.selectAll();
+            result.setData(list);
+        } catch (Exception e) {
+            result.setRetCode(Result.RECODE_ERROR);
+            result.setErrMsg("方法执行出错");
+            logger.error("方法执行出错", e);
             throw new RuntimeException(e);
         }
         return result;

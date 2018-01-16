@@ -1,5 +1,6 @@
 package cn.edu.hfut.xc.bookauthordemo.provider.dao;
 
+import cn.edu.hfut.xc.bookauthordemo.common.model.Author;
 import cn.edu.hfut.xc.bookauthordemo.common.model.Shop;
 import cn.edu.hfut.xc.bookauthordemo.common.model.ShopExample;
 import java.util.List;
@@ -27,4 +28,9 @@ public interface ShopMapper {
      * @return
      */
     List<Shop> selectByColumn(Shop shop);
+
+    /**
+     * 查询所有作者信息
+     */
+    List<Shop> selectAll();
 }

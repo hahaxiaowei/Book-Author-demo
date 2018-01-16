@@ -1,5 +1,6 @@
 package cn.edu.hfut.xc.bookauthordemo.provider.dao;
 
+import cn.edu.hfut.xc.bookauthordemo.common.model.Author;
 import cn.edu.hfut.xc.bookauthordemo.common.model.BookClass;
 import cn.edu.hfut.xc.bookauthordemo.common.model.BookClassExample;
 import java.util.List;
@@ -25,4 +26,9 @@ public interface BookClassMapper {
      * 根据图书分类的某个字段来查询数据
      */
     List<BookClass> selectByColumn(BookClass bookClass);
+
+    /**
+     * 查询所有信息
+     */
+    List<BookClass> selectAll();
 }

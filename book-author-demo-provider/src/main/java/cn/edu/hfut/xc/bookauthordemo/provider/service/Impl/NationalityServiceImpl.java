@@ -65,4 +65,15 @@ public class NationalityServiceImpl implements NationalityService {
     public int updateByPrimaryKey(Nationality record) {
         return nationalityMapper.updateByPrimaryKey(record);
     }
+
+
+    @Override
+    public List<Nationality> selectByColumn(Nationality nationality) {
+        return nationalityMapper.selectByColumn(nationality);
+    }
+
+    @Override
+    public List<Nationality> selectAll() {
+        return nationalityMapper.selectAll();
+    }
 }

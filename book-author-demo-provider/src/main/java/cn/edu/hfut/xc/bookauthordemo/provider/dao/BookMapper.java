@@ -1,5 +1,6 @@
 package cn.edu.hfut.xc.bookauthordemo.provider.dao;
 
+import cn.edu.hfut.xc.bookauthordemo.common.model.Author;
 import cn.edu.hfut.xc.bookauthordemo.common.model.Book;
 import cn.edu.hfut.xc.bookauthordemo.common.model.BookExample;
 import java.util.List;
@@ -22,4 +23,9 @@ public interface BookMapper {
     int updateByPrimaryKey(Book record);
 
     List<Book> selectByColumn(Book book);
+
+    /**
+     * 查询所有作者信息
+     */
+    List<Book> selectAll();
 }

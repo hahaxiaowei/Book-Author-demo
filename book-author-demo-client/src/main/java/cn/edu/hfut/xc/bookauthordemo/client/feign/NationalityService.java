@@ -69,4 +69,19 @@ public interface NationalityService {
      */
     @RequestMapping(value = "/nationality/updateByPrimaryKey" ,method = RequestMethod.PUT)
     Result updateByPrimaryKey(@RequestBody Nationality record);
+
+    /**
+     * 根据国籍某个字段来查询国籍信息
+     * @param nationality
+     * @return
+     */
+    @RequestMapping(value = "/nationality/selectColumn", method = RequestMethod.GET)
+    Result selectByColumn(@RequestBody Nationality nationality);
+
+    /**
+     * 查询表中的所有国籍信息
+     * @return
+     */
+    @RequestMapping(value = "/nationality/selectAll", method = RequestMethod.GET)
+    Result selectAll();
 }

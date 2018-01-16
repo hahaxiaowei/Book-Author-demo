@@ -16,6 +16,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static cn.edu.hfut.xc.bookauthordemo.common.util.JwtUtil.JWT_ID;
@@ -392,5 +393,27 @@ public class AuthorController {
             throw new RuntimeException(e);
         }
         return tag;
+    }
+
+    /**
+     * @param
+     * @return cn.edu.hfut.xc.bookauthordemo.common.util.Result
+     * @description 查询所有作者信息
+     * @method selectAll
+     */
+    @RequestMapping(value ="/selectAll",method = RequestMethod.GET)
+    public Result selectAll() {
+
+        Result result = new Result();
+        try {
+            List<Author> list = authorService.selectAll();
+            result.setData(list);
+        } catch (Exception e) {
+            result.setRetCode(Result.RECODE_ERROR);
+            result.setErrMsg("方法执行出错" + e);
+            logger.error("方法执行出错", e);
+            throw new RuntimeException(e);
+        }
+        return result;
     }
 }

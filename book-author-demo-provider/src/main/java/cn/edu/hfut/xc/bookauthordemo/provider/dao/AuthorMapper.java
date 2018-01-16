@@ -57,4 +57,9 @@ public interface AuthorMapper {
      * @return
      */
     Author selectByIDCard(String idCode);
+
+    /**
+     * 查询所有作者信息
+     */
+    List<Author> selectAll();
 }

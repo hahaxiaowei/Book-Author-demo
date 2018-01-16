@@ -1,5 +1,6 @@
 package cn.edu.hfut.xc.bookauthordemo.provider.dao;
 
+import cn.edu.hfut.xc.bookauthordemo.common.model.Author;
 import cn.edu.hfut.xc.bookauthordemo.common.model.Publisher;
 import cn.edu.hfut.xc.bookauthordemo.common.model.PublisherExample;
 import java.util.List;
@@ -27,4 +28,9 @@ public interface PublisherMapper {
      * @return
      */
     List<Publisher> selectByColumn(Publisher publisher);
+
+    /**
+     * 查询所有作者信息
+     */
+    List<Publisher> selectAll();
 }

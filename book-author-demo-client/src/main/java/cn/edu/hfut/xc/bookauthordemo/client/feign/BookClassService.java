@@ -72,4 +72,7 @@ public interface BookClassService {
 
     @RequestMapping(value = "/bookclass/updateByPrimaryKey" ,method = RequestMethod.PUT)
     Result updateByPrimaryKey(@RequestBody BookClass record);
+
+    @RequestMapping(value ="/bookclass/selectAll",method = RequestMethod.GET)
+    Result selectAll();
 }

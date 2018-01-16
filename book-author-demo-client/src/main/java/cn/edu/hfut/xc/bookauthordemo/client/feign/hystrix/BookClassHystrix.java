@@ -67,4 +67,12 @@ public class BookClassHystrix implements BookClassService {
         result.setErrMsg("调用服务降级处理逻辑！");
         return result;
     }
+
+    @Override
+    public Result selectAll() {
+        Result result = new Result();
+        result.setRetCode(Result.RECODE_ERROR);
+        result.setErrMsg("调用服务降级处理逻辑！");
+        return result;
+    }
 }

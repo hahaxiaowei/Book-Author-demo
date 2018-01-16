@@ -271,4 +271,9 @@ public class AuthorServiceImpl implements AuthorService {
         }
         return tag;
     }
+
+    @Override
+    public List<Author> selectAll() {
+       return authorMapper.selectAll();
+    }
 }

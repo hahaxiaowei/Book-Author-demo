@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -168,6 +169,28 @@ public class BookClassController {
             result.setRetCode(Result.RECODE_ERROR);
             result.setErrMsg("selectPageQuery方法执行异常");
             logger.error("selectPageQuery方法执行异常"+ e.getMessage() + e);
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+
+    /**
+     * @param
+     * @return cn.edu.hfut.xc.bookauthordemo.common.util.Result
+     * @description 查询所有图书分类信息
+     * @method selectAll
+     */
+    @RequestMapping(value ="/selectAll",method = RequestMethod.GET)
+    public Result selectAll() {
+
+        Result result = new Result();
+        try {
+            List<BookClass> list = bookClassService.selectAll();
+            result.setData(list);
+        } catch (Exception e) {
+            result.setRetCode(Result.RECODE_ERROR);
+            result.setErrMsg("方法执行出错" + e);
+            logger.error("方法执行出错", e);
             throw new RuntimeException(e);
         }
         return result;

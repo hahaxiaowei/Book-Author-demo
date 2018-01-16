@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * Created by sunwei on 2018/1/4 Time:13:40
@@ -284,6 +285,27 @@ public class AuthorController {
         } catch (Exception e) {
             result.setRetCode(Result.RECODE_ERROR);
             result.setErrMsg("方法执行错误");
+            logger.error("方法执行出错", e);
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+
+    /**
+     * @param
+     * @return cn.edu.hfut.xc.bookauthordemo.common.util.Result
+     * @description 查询所有作者信息
+     * @method selectAll
+     */
+    @RequestMapping(value ="/selectAll",method = RequestMethod.GET)
+    public Result selectAll() {
+
+        Result result = new Result();
+        try {
+            result = authorService.selectAll();
+        } catch (Exception e) {
+            result.setRetCode(Result.RECODE_ERROR);
+            result.setErrMsg("方法执行出错" + e);
             logger.error("方法执行出错", e);
             throw new RuntimeException(e);
         }

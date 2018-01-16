@@ -4,6 +4,8 @@ import cn.edu.hfut.xc.bookauthordemo.common.model.Library;
 import cn.edu.hfut.xc.bookauthordemo.common.model.Nationality;
 import cn.edu.hfut.xc.bookauthordemo.common.util.Pagination;
 
+import java.util.List;
+
 /**
  * Created by sunwei on 2017/12/8 Time:9:41
  */
@@ -58,4 +60,14 @@ public interface NationalityService {
      * @return
      */
     int updateByPrimaryKey(Nationality record);
+
+    /**
+     * 根据国籍表里面的某个字段查询数据
+     */
+    List<Nationality> selectByColumn(Nationality nationality);
+
+    /**
+     * 查询所有国籍信息
+     */
+    List<Nationality> selectAll();
 }

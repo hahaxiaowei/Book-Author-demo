@@ -63,6 +63,14 @@
     from tbl_publisher
     where id = #{id,jdbcType=VARCHAR}
   </select>
+
+  <!--查询所有信息-->
+  <select id="selectAll" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Publisher" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    from tbl_publisher
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from tbl_publisher
     where id = #{id,jdbcType=VARCHAR}

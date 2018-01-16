@@ -96,6 +96,12 @@
     </where>
   </select>
 
+  <!--查询所有信息-->
+  <select id="selectAll" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.ShopOwner" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    from tbl_shopowner
+  </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from tbl_shopowner

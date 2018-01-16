@@ -113,4 +113,9 @@ public interface AuthorService {
      */
     Boolean isVerificatCorrect(String verificationcode, String epeo_Tel);
 
+    /**
+     * 查询所有作者信息
+     */
+    List<Author> selectAll();
+
 }
