@@ -118,4 +118,10 @@ public interface AuthorService {
      */
     List<Author> selectAll();
 
+    /**
+     * 根据作者id查询作者信息
+     * @param id
+     * @return
+     */
+    Author selectAuthorBook(String id);
 }

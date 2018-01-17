@@ -3,6 +3,8 @@ package cn.edu.hfut.xc.bookauthordemo.provider.service;
 import cn.edu.hfut.xc.bookauthordemo.common.model.Book;
 import cn.edu.hfut.xc.bookauthordemo.common.util.Pagination;
 
+import java.util.List;
+
 /**
  * Created by sunwei on 2017/12/6 Time:17:25
  */
@@ -58,4 +60,9 @@ public interface BookService {
      * @return
      */
     int updateByPrimaryKey(Book record);
+
+    /**
+     * 查询所有信息
+     */
+    List<Book> selectAll();
 }

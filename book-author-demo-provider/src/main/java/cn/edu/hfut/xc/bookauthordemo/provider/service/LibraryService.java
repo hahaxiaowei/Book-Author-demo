@@ -4,6 +4,8 @@ import cn.edu.hfut.xc.bookauthordemo.common.model.Book;
 import cn.edu.hfut.xc.bookauthordemo.common.model.Library;
 import cn.edu.hfut.xc.bookauthordemo.common.util.Pagination;
 
+import java.util.List;
+
 /**
  * Created by sunwei on 2017/12/8 Time:9:40
  */
@@ -59,4 +61,9 @@ public interface LibraryService {
      * @return
      */
     int updateByPrimaryKey(Library record);
+
+    /**
+     * 查询所有信息
+     */
+    List<Library> selectAll();
 }

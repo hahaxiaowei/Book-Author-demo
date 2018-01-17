@@ -2,9 +2,12 @@ package cn.edu.hfut.xc.bookauthordemo.provider.service.Impl;
 
 import cn.edu.hfut.xc.bookauthordemo.common.model.Book;
 import cn.edu.hfut.xc.bookauthordemo.common.model.BookExample;
+import cn.edu.hfut.xc.bookauthordemo.common.model.BookWithLibrary;
+import cn.edu.hfut.xc.bookauthordemo.common.model.BookWithNationality;
 import cn.edu.hfut.xc.bookauthordemo.common.util.Pagination;
 import cn.edu.hfut.xc.bookauthordemo.common.util.StringUtil;
 import cn.edu.hfut.xc.bookauthordemo.provider.dao.BookMapper;
+import cn.edu.hfut.xc.bookauthordemo.provider.dao.BookWithShopMapper;
 import cn.edu.hfut.xc.bookauthordemo.provider.service.BookService;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
@@ -25,6 +28,16 @@ public class BookServiceImpl implements BookService {
 
     @Autowired
     private BookMapper bookMapper;
+
+    @Autowired
+    private BookWithNationality bookWithNationality;
+
+    @Autowired
+    private BookWithLibrary bookWithLibrary;
+
+    @Autowired
+    private BookWithShopMapper bookWithShopMapper;
+
     @Override
     public int deleteByPrimaryKey(String id) {
         return bookMapper.deleteByPrimaryKey(id);
@@ -39,6 +52,10 @@ public class BookServiceImpl implements BookService {
     @Override
 
     public int insert(Book record) {
+        BookWithNationality bookWithNationality = new BookWithNationality();
+        bookWithNationality.setBookId(record.getId());
+        bookWithNationality.setBookName(record.getBookName());
+
         return bookMapper.insert(record);
     }
 
@@ -96,5 +113,11 @@ public class BookServiceImpl implements BookService {
     @Override
     public int updateByPrimaryKey(Book record) {
         return bookMapper.updateByPrimaryKey(record);
+    }
+
+
+    @Override
+    public List<Book> selectAll() {
+        return bookMapper.selectAll();
     }
 }

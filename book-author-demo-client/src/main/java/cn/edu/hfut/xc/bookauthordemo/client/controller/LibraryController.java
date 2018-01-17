@@ -10,6 +10,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * Created by sunwei on 2018/1/4 Time:13:41
  */
@@ -140,6 +142,27 @@ public class LibraryController {
             result.setRetCode(Result.RECODE_ERROR);
             result.setErrMsg("selectPageQuery方法执行异常");
             logger.error("selectPageQuery方法执行异常"+ e.getMessage() + e);
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+
+    /**
+     * @param
+     * @return cn.edu.hfut.xc.bookauthordemo.common.util.Result
+     * @description 查询所有图书信息
+     * @method selectAll
+     */
+    @RequestMapping(value ="/selectAll",method = RequestMethod.GET)
+    public Result selectAll() {
+
+        Result result = new Result();
+        try {
+            result = libraryService.selectAll();
+        } catch (Exception e) {
+            result.setRetCode(Result.RECODE_ERROR);
+            result.setErrMsg("方法执行出错" + e);
+            logger.error("方法执行出错", e);
             throw new RuntimeException(e);
         }
         return result;

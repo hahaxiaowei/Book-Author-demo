@@ -72,4 +72,12 @@ public interface LibraryService {
      */
     @RequestMapping(value = "/library/updateByPrimaryKey" ,method = RequestMethod.PUT)
     Result updateByPrimaryKey(@RequestBody Library record);
+
+
+    /**
+     * 查询所有图书馆信息
+     * @return
+     */
+    @RequestMapping(value ="/library/selectAll",method = RequestMethod.GET)
+    Result selectAll();
 }

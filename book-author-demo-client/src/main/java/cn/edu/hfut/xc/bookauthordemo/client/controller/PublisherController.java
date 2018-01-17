@@ -145,4 +145,23 @@ public class PublisherController {
         }
         return result;
     }
+
+    /**
+     * @return cn.edu.hfut.xc.bookauthordemo.common.util.Result
+     * @description 根据国籍某个字段来查询国籍信息
+     * @method selectByColumn
+     */
+    @RequestMapping(value = "/selectAll", method = RequestMethod.GET)
+    public Result selectAll(){
+        Result result = new Result();
+        try {
+            result = publisherService.selectAll();
+        } catch (Exception e) {
+            result.setRetCode(Result.RECODE_ERROR);
+            result.setErrMsg("方法执行出错");
+            logger.error("方法执行出错", e);
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
 }

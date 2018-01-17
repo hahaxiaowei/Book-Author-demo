@@ -56,11 +56,19 @@
       order by ${orderByClause}
     </if>
   </select>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from tbl_library
     where id = #{id,jdbcType=VARCHAR}
+  </select>
+
+  <!--查询所有信息-->
+  <select id="selectAll" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.BookWithShop" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    from tbl_book_shop
   </select>
 
   <!--根据图书馆表中的某个字段查询数据-->

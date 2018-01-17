@@ -1,5 +1,7 @@
 package cn.edu.hfut.xc.bookauthordemo.common.model;
 
+import java.util.List;
+
 public class Book {
     private String id;
 
@@ -14,6 +16,8 @@ public class Book {
     private String publicationDate;
 
     private String publishedAddress;
+
+    private List<Author> authors;
 
     public String getId() {
         return id;
@@ -69,5 +73,13 @@ public class Book {
 
     public void setPublishedAddress(String publishedAddress) {
         this.publishedAddress = publishedAddress == null ? null : publishedAddress.trim();
+    }
+
+    public List<Author> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(List<Author> authors) {
+        this.authors = authors;
     }
 }

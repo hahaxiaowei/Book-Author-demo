@@ -3,7 +3,7 @@ package cn.edu.hfut.xc.bookauthordemo.provider.service.Impl;
 import cn.edu.hfut.xc.bookauthordemo.common.model.Author;
 import cn.edu.hfut.xc.bookauthordemo.common.model.AuthorExample;
 import cn.edu.hfut.xc.bookauthordemo.common.model.AuthorInfo;
-import cn.edu.hfut.xc.bookauthordemo.common.model.Nationality;
+import cn.edu.hfut.xc.bookauthordemo.common.model.AuthorWithBook;
 import cn.edu.hfut.xc.bookauthordemo.common.util.EncryptUtil;
 import cn.edu.hfut.xc.bookauthordemo.common.util.Pagination;
 import cn.edu.hfut.xc.bookauthordemo.common.util.Result;
@@ -11,6 +11,9 @@ import cn.edu.hfut.xc.bookauthordemo.common.util.StringUtil;
 import cn.edu.hfut.xc.bookauthordemo.provider.config.BusinessUtils;
 import cn.edu.hfut.xc.bookauthordemo.provider.config.RedisUtils;
 import cn.edu.hfut.xc.bookauthordemo.provider.dao.AuthorMapper;
+import cn.edu.hfut.xc.bookauthordemo.provider.dao.AuthorWithBookMapper;
+import cn.edu.hfut.xc.bookauthordemo.provider.dao.BookMapper;
+import cn.edu.hfut.xc.bookauthordemo.provider.dao.NationalityMapper;
 import cn.edu.hfut.xc.bookauthordemo.provider.service.AuthorService;
 import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.Page;
@@ -36,11 +39,19 @@ public class AuthorServiceImpl implements AuthorService {
     private AuthorMapper authorMapper;
 
     @Autowired
+    private AuthorWithBookMapper authorWithBookMapper;
+
+    @Autowired
+    private BookMapper bookMapper;
+
+    @Autowired
     private TelLogin telLogin;
 
     public static String LOGIN_AUTHENTICATION_ = "LOGIN_AUTHENTICATION_";
+
     /**
      * 登录验证
+     *
      * @param authorInfo
      * @return
      */
@@ -98,6 +109,8 @@ public class AuthorServiceImpl implements AuthorService {
      */
     @Override
     public int insertSelective(Author record) {
+        //进行MD5加密
+        record.setPassword(EncryptUtil.encryptPassWord(record.getPassword()));
         return authorMapper.insertSelective(record);
     }
 
@@ -121,7 +134,7 @@ public class AuthorServiceImpl implements AuthorService {
      * @description 分页查询，根据作者的姓名分页查询
      * @method selectPageQuery
      */
-    @Cacheable(value = "data",key = "#authorName+'_'+#pageNum+'_'+#pageSize")
+    @Cacheable(value = "data", key = "#authorName+'_'+#pageNum+'_'+#pageSize")
     @Override
     public Pagination<Author> selectPageQuery(String authorName, int pageNum, int pageSize) {
 
@@ -162,7 +175,7 @@ public class AuthorServiceImpl implements AuthorService {
             Author author = new Author();
             author.setPhoneNumber(phoneNumber);
             List<Author> list = authorMapper.selectByColumn(author);
-            if (StringUtil.isNullOrEmpty(list) || list.size()==0) {
+            if (StringUtil.isNullOrEmpty(list) || list.size() == 0) {
                 tag = false;
                 result.setData(tag);
                 return result;
@@ -186,7 +199,7 @@ public class AuthorServiceImpl implements AuthorService {
     @Override
     public Author selectByPhoneNumber(String phoneNumber) {
 
-       return authorMapper.selectByPhoneNumber(phoneNumber);
+        return authorMapper.selectByPhoneNumber(phoneNumber);
     }
 
     /**
@@ -243,7 +256,7 @@ public class AuthorServiceImpl implements AuthorService {
             result.setData(codeMap);
         } catch (Exception e) {
             result.setRetCode(Result.RECODE_ERROR);
-            result.setErrMsg("获取验证码错误"+e);
+            result.setErrMsg("获取验证码错误" + e);
             logger.error("方法执行出错", e);
             throw new RuntimeException(e);
         }
@@ -274,6 +287,11 @@ public class AuthorServiceImpl implements AuthorService {
 
     @Override
     public List<Author> selectAll() {
-       return authorMapper.selectAll();
+        return authorMapper.selectAll();
+    }
+
+    @Override
+    public Author selectAuthorBook(String id) {
+        return authorMapper.selectAuthorBook(id);
     }
 }

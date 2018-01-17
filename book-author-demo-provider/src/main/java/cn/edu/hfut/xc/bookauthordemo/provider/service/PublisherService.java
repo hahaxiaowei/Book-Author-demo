@@ -4,6 +4,8 @@ import cn.edu.hfut.xc.bookauthordemo.common.model.Nationality;
 import cn.edu.hfut.xc.bookauthordemo.common.model.Publisher;
 import cn.edu.hfut.xc.bookauthordemo.common.util.Pagination;
 
+import java.util.List;
+
 /**
  * Created by sunwei on 2017/12/8 Time:9:41
  */
@@ -59,4 +61,9 @@ public interface PublisherService {
      * @return
      */
     int updateByPrimaryKey(Publisher record);
+
+    /**
+     * 查询所有信息
+     */
+    List<Publisher> selectAll();
 }

@@ -30,7 +30,7 @@ public interface PublisherMapper {
     List<Publisher> selectByColumn(Publisher publisher);
 
     /**
-     * 查询所有作者信息
+     * 查询所有信息
      */
     List<Publisher> selectAll();
 }

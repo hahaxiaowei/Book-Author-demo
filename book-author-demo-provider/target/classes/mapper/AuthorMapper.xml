@@ -20,6 +20,18 @@
     <result column="wechat_number" jdbcType="VARCHAR" property="wechatNumber" />
     <result column="sina_microblog_number" jdbcType="VARCHAR" property="sinaMicroblogNumber" />
   </resultMap>
+  
+  <resultMap id="AuthorBookResultMap" type="cn.edu.hfut.xc.bookauthordemo.common.model.Author" extends="BaseResultMap">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="book_name" jdbcType="VARCHAR" property="bookName" />
+    <result column="book_class_id" jdbcType="VARCHAR" property="bookClassId" />
+    <result column="publisher_id" jdbcType="VARCHAR" property="publisherId" />
+    <result column="book_code" jdbcType="VARCHAR" property="bookCode" />
+    <result column="publication_date" jdbcType="VARCHAR" property="publicationDate" />
+    <result column="published_address" jdbcType="VARCHAR" property="publishedAddress" />
+  </resultMap>
+
+
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -74,6 +86,26 @@
     from tbl_author
     where id = #{id,jdbcType=VARCHAR}
   </select>
+
+<!--根据作者id查询作者和该作者所写的书-->
+  <select id="selectAuthorBook" parameterType="java.lang.String" resultMap="AuthorBookResultMap">
+  SELECT tbl_author.id, tbl_author.author_name, tbl_author.phone_number,tbl_author.email_number,tbl_author.user_name,tbl_author.password, tbl_author.age, tbl_author.sex, tbl_author.address, tbl_author.id_code, tbl_author.personal_remark,
+    tbl_author.nationality_id, tbl_author.nation, tbl_author.head_portrait, tbl_author.qq_number, tbl_author.wechat_number, tbl_author.sina_microblog_number, tbl_book.id AS id , tbl_book.book_name AS bookName, tbl_book.book_class_id AS bookClassId, tbl_book.publisher_id AS publisherId, tbl_book.book_code AS bookCode, tbl_book.publication_date AS publicationDate, tbl_book.published_address AS publishedAddress
+    from tbl_author left join tbl_author_book on tbl_author.id = tbl_author_book.author_id left join tbl_book on tbl_author_book.book_id = tbl_book.id
+    where tbl_author.id = #{id,jdbcType=VARCHAR}
+  </select>
+
+  <!--插入作者和作者所写的书籍信息-->
+  <insert id="insertAuthorBook" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.AuthorWithBook">
+    <selectKey keyProperty="id" resultType="String" order="BEFORE">
+      select replace(uuid(),'-','') from dual
+    </selectKey>
+    insert into tbl_author_book(id, author_id, book_id,
+    author_name, book_name)
+    values (#{id,jdbcType=VARCHAR},#{tbl_author.id,jdbcType=VARCHAR}, #{tbl_book.id,jdbcType=VARCHAR},
+      #{tbl_author.authorName,jdbcType=VARCHAR}, #{tbl_book.bookName,jdbcType=VARCHAR})
+  </insert>
+
   <!--根据作者表中的某个字段查询数据-->
   <select id="selectByColumn" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Author" resultMap="BaseResultMap">
     select

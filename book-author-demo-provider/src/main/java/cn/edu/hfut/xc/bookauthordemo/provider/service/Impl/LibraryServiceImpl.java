@@ -67,4 +67,9 @@ public class LibraryServiceImpl implements LibraryService {
     public int updateByPrimaryKey(Library record) {
         return libraryMapper.updateByPrimaryKey(record);
     }
+
+    @Override
+    public List<Library> selectAll() {
+        return libraryMapper.selectAll();
+    }
 }

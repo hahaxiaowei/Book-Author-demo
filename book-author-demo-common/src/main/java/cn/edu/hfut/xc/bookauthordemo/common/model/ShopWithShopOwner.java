@@ -5,7 +5,7 @@ public class ShopWithShopOwner {
 
     private String shopId;
 
-    private String shopOwner;
+    private String shopOwnerId;
 
     private String shopName;
 
@@ -27,12 +27,12 @@ public class ShopWithShopOwner {
         this.shopId = shopId == null ? null : shopId.trim();
     }
 
-    public String getShopOwner() {
-        return shopOwner;
+    public String getShopOwnerId() {
+        return shopOwnerId;
     }
 
-    public void setShopOwner(String shopOwner) {
-        this.shopOwner = shopOwner == null ? null : shopOwner.trim();
+    public void setShopOwner(String shopOwnerId) {
+        this.shopOwnerId = shopOwnerId == null ? null : shopOwnerId.trim();
     }
 
     public String getShopName() {

@@ -416,4 +416,32 @@ public class AuthorController {
         }
         return result;
     }
+
+    /**
+     * @param id
+     * @return cn.edu.hfut.xc.bookauthordemo.common.util.Result
+     * @description 根据主键查询作者信息
+     * @method selectByPrimaryKey
+     */
+    @RequestMapping(value = "/selectAuthorBook/{id}", method = RequestMethod.GET)
+    public Result selectAuthorBook(@PathVariable String id) {
+        Result result = new Result();
+        try {
+            if (StringUtil.isNullOrEmpty(id)) {
+                result.setRetCode(Result.RECODE_VALIDATE_ERROR);
+                result.setErrMsg("作者id不能为空");
+                return result;
+            }
+            result.setData(authorService.selectAuthorBook(id));
+            result.setRetCode(Result.RECODE_SUCCESS);
+        } catch (Exception e) {
+            result.setRetCode(Result.RECODE_ERROR);
+            result.setErrMsg("方法执行异常");
+            logger.error("方法执行异常" + e.getMessage() + e);
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+
+
 }

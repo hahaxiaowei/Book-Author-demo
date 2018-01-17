@@ -70,4 +70,10 @@ public interface PublisherService {
     @RequestMapping(value = "/publisher/updateByPrimaryKey", method = RequestMethod.PUT)
     Result updateByPrimaryKey(@RequestBody Publisher record);
 
+    /**
+     * 查询表中的所有出版商信息
+     * @return
+     */
+    @RequestMapping(value = "/publisher/selectAll", method = RequestMethod.GET)
+    Result selectAll();
 }

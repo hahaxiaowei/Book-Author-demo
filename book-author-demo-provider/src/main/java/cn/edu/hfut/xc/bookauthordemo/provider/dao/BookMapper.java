@@ -25,7 +25,7 @@ public interface BookMapper {
     List<Book> selectByColumn(Book book);
 
     /**
-     * 查询所有作者信息
+     * 查询所有信息
      */
     List<Book> selectAll();
 }

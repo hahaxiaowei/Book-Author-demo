@@ -1,5 +1,7 @@
 package cn.edu.hfut.xc.bookauthordemo.common.model;
 
+import java.util.List;
+
 public class Author {
     private String id;
 
@@ -34,6 +36,8 @@ public class Author {
     private String wechatNumber;
 
     private String sinaMicroblogNumber;
+
+    private List<Book> books;
 
     public String getId() {
         return id;
@@ -169,5 +173,13 @@ public class Author {
 
     public void setSinaMicroblogNumber(String sinaMicroblogNumber) {
         this.sinaMicroblogNumber = sinaMicroblogNumber == null ? null : sinaMicroblogNumber.trim();
+    }
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
     }
 }

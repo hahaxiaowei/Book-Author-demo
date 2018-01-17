@@ -4,6 +4,8 @@ import cn.edu.hfut.xc.bookauthordemo.common.model.Shop;
 import cn.edu.hfut.xc.bookauthordemo.common.model.ShopOwner;
 import cn.edu.hfut.xc.bookauthordemo.common.util.Pagination;
 
+import java.util.List;
+
 /**
  * Created by sunwei on 2017/12/8 Time:9:42
  */
@@ -59,4 +61,9 @@ public interface ShopService {
      * @return
      */
     int updateByPrimaryKey(Shop record);
+
+    /**
+     * 查询所有信息
+     */
+    List<Shop> selectAll();
 }

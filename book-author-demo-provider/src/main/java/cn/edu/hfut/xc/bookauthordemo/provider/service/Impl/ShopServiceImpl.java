@@ -65,4 +65,9 @@ public class ShopServiceImpl implements ShopService {
     public int updateByPrimaryKey(Shop record) {
         return shopMapper.updateByPrimaryKey(record);
     }
+
+    @Override
+    public List<Shop> selectAll() {
+        return shopMapper.selectAll();
+    }
 }

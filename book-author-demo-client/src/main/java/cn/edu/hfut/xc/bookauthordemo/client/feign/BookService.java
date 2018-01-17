@@ -16,7 +16,7 @@ public interface BookService {
      * @param id
      * @return
      */
-    @RequestMapping(value = "/deleteByPrimaryKey/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/book/deleteByPrimaryKey/{id}", method = RequestMethod.DELETE)
     Result deleteByPrimaryKey(@PathVariable(value = "id") String id);
 
     /**
@@ -69,4 +69,7 @@ public interface BookService {
      */
     @RequestMapping(value = "/book/updateByPrimaryKey" ,method = RequestMethod.PUT)
     Result updateByPrimaryKey(@RequestBody Book record);
+
+    @RequestMapping(value ="/book/selectAll",method = RequestMethod.GET)
+    Result selectAll();
 }

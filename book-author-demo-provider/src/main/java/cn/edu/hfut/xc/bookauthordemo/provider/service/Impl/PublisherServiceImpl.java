@@ -66,4 +66,9 @@ public class PublisherServiceImpl implements PublisherService {
     public int updateByPrimaryKey(Publisher record) {
         return publisherMapper.updateByPrimaryKey(record);
     }
+
+    @Override
+    public List<Publisher> selectAll() {
+        return publisherMapper.selectAll();
+    }
 }

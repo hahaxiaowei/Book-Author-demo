@@ -72,4 +72,11 @@ public interface ShopService {
      */
     @RequestMapping(value = "/shop/updateByPrimaryKey", method = RequestMethod.PUT)
     Result updateByPrimaryKey(@RequestBody Shop record);
+
+    /**
+     * 查询表中的所有商店信息
+     * @return
+     */
+    @RequestMapping(value = "/shop/selectAll", method = RequestMethod.GET)
+    Result selectAll();
 }

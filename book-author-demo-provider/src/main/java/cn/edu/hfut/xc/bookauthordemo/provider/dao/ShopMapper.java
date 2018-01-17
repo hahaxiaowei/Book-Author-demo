@@ -30,7 +30,7 @@ public interface ShopMapper {
     List<Shop> selectByColumn(Shop shop);
 
     /**
-     * 查询所有作者信息
+     * 查询所有信息
      */
     List<Shop> selectAll();
 }

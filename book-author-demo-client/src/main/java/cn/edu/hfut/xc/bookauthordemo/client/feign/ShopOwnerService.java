@@ -71,4 +71,11 @@ public interface ShopOwnerService {
      */
     @RequestMapping(value = "/shopowner/updateByPrimaryKey", method = RequestMethod.PUT)
     Result updateByPrimaryKey(@RequestBody ShopOwner record);
+
+    /**
+     * 查询表中的所有商店信息
+     * @return
+     */
+    @RequestMapping(value = "/shopowner/selectAll", method = RequestMethod.GET)
+    Result selectAll();
 }

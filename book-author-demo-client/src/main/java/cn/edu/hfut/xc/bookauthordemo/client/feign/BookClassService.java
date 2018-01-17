@@ -18,7 +18,7 @@ public interface BookClassService {
      * @param id
      * @return
      */
-    @RequestMapping(value = "/book/deleteByPrimaryKey/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/bookclass/deleteByPrimaryKey/{id}", method = RequestMethod.DELETE)
     Result deleteByPrimaryKey(@PathVariable(value = "id") String id);
 
     /**
@@ -26,7 +26,7 @@ public interface BookClassService {
      * @param record
      * @return
      */
-    @RequestMapping(value = "/book/insert", method = RequestMethod.POST)
+    @RequestMapping(value = "/bookclass/insert", method = RequestMethod.POST)
     Result insert(@RequestBody BookClass record);
 
     /**
@@ -34,7 +34,7 @@ public interface BookClassService {
      * @param record
      * @return
      */
-    @RequestMapping(value = "/book/insertSelective", method = RequestMethod.POST)
+    @RequestMapping(value = "/bookclass/insertSelective", method = RequestMethod.POST)
     Result insertSelective(@RequestBody BookClass record);
 
     /**
@@ -42,7 +42,7 @@ public interface BookClassService {
      * @param id
      * @return
      */
-    @RequestMapping(value ="/selectByPrimaryKey/{id}",method = RequestMethod.GET)
+    @RequestMapping(value ="/bookclass/selectByPrimaryKey/{id}",method = RequestMethod.GET)
     Result selectByPrimaryKey(@PathVariable(value = "id") String id);
 
     /**
@@ -52,7 +52,7 @@ public interface BookClassService {
      * @param pageSize
      * @return
      */
-    @RequestMapping(value = "/book/selectPageQuery",method = RequestMethod.GET)
+    @RequestMapping(value = "/bookclass/selectPageQuery",method = RequestMethod.GET)
     Result selectPageQuery (@RequestParam(required = false, defaultValue = "", value = "bookClassName") String bookClassName,
                                            @RequestParam(defaultValue = "1", value = "pageNum") int pageNum,
                                            @RequestParam(defaultValue = "10", value = "pageSize") int pageSize);

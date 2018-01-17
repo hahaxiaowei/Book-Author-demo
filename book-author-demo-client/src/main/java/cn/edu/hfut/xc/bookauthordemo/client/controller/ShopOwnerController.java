@@ -145,4 +145,24 @@ public class ShopOwnerController {
         }
         return result;
     }
+    /**
+     * @param
+     * @return cn.edu.hfut.xc.bookauthordemo.common.util.Result
+     * @description 查询所有店主信息
+     * @method selectAll
+     */
+    @RequestMapping(value = "/selectAll", method = RequestMethod.GET)
+    public Result selectAll(){
+
+        Result result = new Result();
+        try {
+            result = shopOwnerService.selectAll();
+        } catch (Exception e) {
+            result.setRetCode(Result.RECODE_ERROR);
+            result.setErrMsg("方法执行出错");
+            logger.error("方法执行出错", e);
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
 }

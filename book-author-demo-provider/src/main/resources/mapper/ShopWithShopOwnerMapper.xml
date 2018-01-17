@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="cn.edu.hfut.xc.bookauthordemo.common.model.ShopWithShopOwner">
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="shop_id" jdbcType="VARCHAR" property="shopId" />
-    <result column="shop_owner" jdbcType="VARCHAR" property="shopOwner" />
+    <result column="shop_owner_id" jdbcType="VARCHAR" property="shopOwnerId" />
     <result column="shop_name" jdbcType="VARCHAR" property="shopName" />
     <result column="shop_owner_name" jdbcType="VARCHAR" property="shopOwnerName" />
   </resultMap>
@@ -38,7 +38,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, shop_id, shop_owner, shop_name, shop_owner_name
+    id, shop_id, shop_owner_id, shop_name, shop_owner_name
   </sql>
   <select id="selectByExample" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.ShopWithShopOwnerExample" resultMap="BaseResultMap">
     select
@@ -79,9 +79,9 @@
     <selectKey keyProperty="id" resultType="String" order="BEFORE">
       select replace(uuid(),'-','') from dual
     </selectKey>
-    insert into tbl_shop_shopowner (id, shop_id, shop_owner,
+    insert into tbl_shop_shopowner (id, shop_id, shop_owner_id,
       shop_name, shop_owner_name)
-    values (#{id,jdbcType=VARCHAR}, #{shopId,jdbcType=VARCHAR}, #{shopOwner,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=VARCHAR}, #{shopId,jdbcType=VARCHAR}, #{shopOwnerId,jdbcType=VARCHAR},
       #{shopName,jdbcType=VARCHAR}, #{shopOwnerName,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.ShopWithShopOwner">
@@ -97,7 +97,7 @@
         shop_id,
       </if>
       <if test="shopOwner != null">
-        shop_owner,
+        shop_owner_id,
       </if>
       <if test="shopName != null">
         shop_name,
@@ -113,8 +113,8 @@
       <if test="shopId != null">
         #{shopId,jdbcType=VARCHAR},
       </if>
-      <if test="shopOwner != null">
-        #{shopOwner,jdbcType=VARCHAR},
+      <if test="shopOwnerId != null">
+        #{shopOwnerId,jdbcType=VARCHAR},
       </if>
       <if test="shopName != null">
         #{shopName,jdbcType=VARCHAR},
@@ -136,8 +136,8 @@
       <if test="shopId != null">
         shop_id = #{shopId,jdbcType=VARCHAR},
       </if>
-      <if test="shopOwner != null">
-        shop_owner = #{shopOwner,jdbcType=VARCHAR},
+      <if test="shopOwnerId != null">
+        shop_owner_id = #{shopOwnerId,jdbcType=VARCHAR},
       </if>
       <if test="shopName != null">
         shop_name = #{shopName,jdbcType=VARCHAR},
@@ -151,7 +151,7 @@
   <update id="updateByPrimaryKey" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.ShopWithShopOwner">
     update tbl_shop_shopowner
     set shop_id = #{shopId,jdbcType=VARCHAR},
-      shop_owner = #{shopOwner,jdbcType=VARCHAR},
+      shop_owner_id = #{shopOwnerId,jdbcType=VARCHAR},
       shop_name = #{shopName,jdbcType=VARCHAR},
       shop_owner_name = #{shopOwnerName,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}

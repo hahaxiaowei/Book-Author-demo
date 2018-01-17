@@ -62,4 +62,6 @@ public interface AuthorMapper {
      * 查询所有作者信息
      */
     List<Author> selectAll();
+
+    Author selectAuthorBook(String id);
 }

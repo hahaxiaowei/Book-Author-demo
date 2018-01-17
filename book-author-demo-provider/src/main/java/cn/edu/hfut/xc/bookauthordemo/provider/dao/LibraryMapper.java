@@ -28,7 +28,7 @@ public interface LibraryMapper {
     List<Library> selectByColumn(Library library);
 
     /**
-     * 查询所有作者信息
+     * 查询所有信息
      */
     List<Library> selectAll();
 }

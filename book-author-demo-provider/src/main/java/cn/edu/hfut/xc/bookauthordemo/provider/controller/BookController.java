@@ -1,6 +1,7 @@
 package cn.edu.hfut.xc.bookauthordemo.provider.controller;
 
 import cn.edu.hfut.xc.bookauthordemo.common.model.Book;
+import cn.edu.hfut.xc.bookauthordemo.common.model.BookClass;
 import cn.edu.hfut.xc.bookauthordemo.common.util.Pagination;
 import cn.edu.hfut.xc.bookauthordemo.common.util.Result;
 import cn.edu.hfut.xc.bookauthordemo.common.util.StringUtil;
@@ -9,6 +10,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * Created by sunwei on 2017/12/8 Time:9:46
@@ -164,6 +167,28 @@ public class BookController {
             result.setRetCode(Result.RECODE_ERROR);
             result.setErrMsg("selectPageQuery方法执行异常");
             logger.error("selectPageQuery方法执行异常"+ e.getMessage() + e);
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+
+    /**
+     * @param
+     * @return cn.edu.hfut.xc.bookauthordemo.common.util.Result
+     * @description 查询所有图书信息
+     * @method selectAll
+     */
+    @RequestMapping(value ="/selectAll",method = RequestMethod.GET)
+    public Result selectAll() {
+
+        Result result = new Result();
+        try {
+            List<Book> list = bookService.selectAll();
+            result.setData(list);
+        } catch (Exception e) {
+            result.setRetCode(Result.RECODE_ERROR);
+            result.setErrMsg("方法执行出错" + e);
+            logger.error("方法执行出错", e);
             throw new RuntimeException(e);
         }
         return result;
