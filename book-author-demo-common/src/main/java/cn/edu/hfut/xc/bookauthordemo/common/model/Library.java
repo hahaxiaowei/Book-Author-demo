@@ -1,5 +1,7 @@
 package cn.edu.hfut.xc.bookauthordemo.common.model;
 
+import java.util.List;
+
 public class Library {
     private String id;
 

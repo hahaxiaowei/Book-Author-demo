@@ -72,4 +72,19 @@ public class LibraryServiceImpl implements LibraryService {
     public List<Library> selectAll() {
         return libraryMapper.selectAll();
     }
+
+    @Override
+    public Library selectLibraryBookByPrimaryKey(String id) {
+        return libraryMapper.selectLibraryBookByPrimaryKey(id);
+    }
+
+    @Override
+    public List<Library> selectLibraryWithBook() {
+        return libraryMapper.selectLibraryWithBook();
+    }
+
+    @Override
+    public List<Library> selectLibraryByNationalityId(String nationalityId) {
+        return libraryMapper.selectLibraryByNationalityId(nationalityId);
+    }
 }

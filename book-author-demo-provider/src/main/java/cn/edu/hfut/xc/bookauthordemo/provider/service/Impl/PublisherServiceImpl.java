@@ -71,4 +71,9 @@ public class PublisherServiceImpl implements PublisherService {
     public List<Publisher> selectAll() {
         return publisherMapper.selectAll();
     }
+
+    @Override
+    public List<Publisher> selectPublisherByNationalityId(String nationalityId) {
+        return publisherMapper.selectPublisherByNationalityId(nationalityId);
+    }
 }

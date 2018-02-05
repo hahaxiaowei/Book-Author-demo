@@ -65,16 +65,24 @@
   </select>
 
   <!--查询所有信息-->
-  <select id="selectAll" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Publisher" resultMap="BaseResultMap">
+  <select id="selectAll" resultMap="BaseResultMap">
     SELECT
     <include refid="Base_Column_List"/>
     from tbl_publisher
+  </select>
+
+  <!--根据国籍查询该国籍下的出版商信息-->
+  <select id="selectPublisherByNationalityId" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT *
+    FROM tbl_publisher
+    WHERE publisher_nationality_id = #{publisherNationalityId,jdbcType =VARCHAR }
   </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from tbl_publisher
     where id = #{id,jdbcType=VARCHAR}
   </delete>
+
   <insert id="insert" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Publisher">
     <selectKey keyProperty="id" resultType="String" order="BEFORE">
       select replace(uuid(),'-','') from dual

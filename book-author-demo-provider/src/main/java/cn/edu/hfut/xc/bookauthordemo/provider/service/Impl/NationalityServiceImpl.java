@@ -24,6 +24,8 @@ public class NationalityServiceImpl implements NationalityService {
 
     @Autowired
     private NationalityMapper nationalityMapper;
+
+
     @Override
     public int deleteByPrimaryKey(String id) {
         return nationalityMapper.deleteByPrimaryKey(id);

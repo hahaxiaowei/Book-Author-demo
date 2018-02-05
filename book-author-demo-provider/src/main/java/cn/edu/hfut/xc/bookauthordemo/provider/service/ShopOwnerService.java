@@ -3,6 +3,9 @@ package cn.edu.hfut.xc.bookauthordemo.provider.service;
 import cn.edu.hfut.xc.bookauthordemo.common.model.Publisher;
 import cn.edu.hfut.xc.bookauthordemo.common.model.ShopOwner;
 import cn.edu.hfut.xc.bookauthordemo.common.util.Pagination;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * Created by sunwei on 2017/12/8 Time:9:42
@@ -59,4 +62,18 @@ public interface ShopOwnerService {
      * @return
      */
     int updateByPrimaryKey(ShopOwner record);
+
+    /**
+     * 根据商店的id查询该商店的店主信息
+     * @param shopId
+     * @return
+     */
+    List<ShopOwner> selectShopOwnerByShopId(@Param("shopId") String shopId);
+
+    List<ShopOwner> selectShopOwnerByNationalityId(@Param("shopOwnerNationalityId") String shopOwnerNationalityId );
+
+    /**
+     * 查询所有店主信息
+     */
+    List<ShopOwner> selectAll();
 }

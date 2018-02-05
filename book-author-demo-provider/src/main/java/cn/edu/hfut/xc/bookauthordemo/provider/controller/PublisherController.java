@@ -191,4 +191,32 @@ public class PublisherController {
         }
         return result;
     }
+
+    /**
+     * @param nationaltiyId
+     * @return cn.edu.hfut.xc.bookauthordemo.common.util.Result
+     * @description 根据国籍id查询该国籍下的出版商信息
+     * @method selectByPrimaryKey
+     */
+    @RequestMapping(value = "/selectPublisherByNationalityId/{nationaltiyId}", method = RequestMethod.GET)
+    public Result selectPublisherByNationalityId(@PathVariable String nationaltiyId) {
+        Result result = new Result();
+        try {
+            if (StringUtil.isNullOrEmpty(nationaltiyId)) {
+                result.setRetCode(Result.RECODE_VALIDATE_ERROR);
+                result.setErrMsg("国籍id不能为空");
+                return result;
+            }
+            result.setData(publisherService.selectPublisherByNationalityId(nationaltiyId));
+            result.setRetCode(Result.RECODE_SUCCESS);
+        } catch (Exception e) {
+            result.setRetCode(Result.RECODE_ERROR);
+            result.setErrMsg("方法执行异常");
+            logger.error("方法执行异常" + e.getMessage() + e);
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+
+
 }

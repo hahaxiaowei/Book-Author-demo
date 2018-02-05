@@ -8,6 +8,7 @@
     <result column="nationality_created_time" jdbcType="VARCHAR" property="nationalityCreatedTime" />
     <result column="nationality_location" jdbcType="VARCHAR" property="nationalityLocation" />
   </resultMap>
+
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -37,9 +38,11 @@
       </foreach>
     </where>
   </sql>
+
   <sql id="Base_Column_List">
     id, nationality_name, nationality_life, nationality_created_time, nationality_location
   </sql>
+
   <select id="selectByExample" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.NationalityExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
@@ -85,7 +88,7 @@
 
 
   <!--查询所有国籍信息-->
-  <select id="selectAll" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Nationality" resultMap="BaseResultMap">
+  <select id="selectAll" resultMap="BaseResultMap">
     SELECT
     <include refid="Base_Column_List"/>
     from nationality
@@ -95,6 +98,7 @@
     delete from nationality
     where id = #{id,jdbcType=VARCHAR}
   </delete>
+
   <insert id="insert" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Nationality">
     <selectKey keyProperty="id" resultType="String" order="BEFORE">
       select replace(uuid(),'-','') from dual
@@ -106,6 +110,7 @@
       #{nationalityCreatedTime,jdbcType=VARCHAR}, #{nationalityLocation,jdbcType=VARCHAR}
       )
   </insert>
+
   <insert id="insertSelective" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Nationality">
     <selectKey keyProperty="id" resultType="String" order="BEFORE">
       select replace(uuid(),'-','') from dual

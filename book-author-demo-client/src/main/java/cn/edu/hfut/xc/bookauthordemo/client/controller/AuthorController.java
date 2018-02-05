@@ -4,7 +4,6 @@ import cn.edu.hfut.xc.bookauthordemo.client.feign.AuthorService;
 import cn.edu.hfut.xc.bookauthordemo.common.model.Author;
 import cn.edu.hfut.xc.bookauthordemo.common.model.AuthorInfo;
 import cn.edu.hfut.xc.bookauthordemo.common.util.Result;
-import cn.edu.hfut.xc.bookauthordemo.common.util.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 /**
  * Created by sunwei on 2018/1/4 Time:13:40
@@ -20,6 +18,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/author")
 public class AuthorController {
+
     private static Logger logger = LoggerFactory.getLogger(AuthorController.class);
     @Autowired
     private AuthorService authorService;
@@ -313,23 +312,4 @@ public class AuthorController {
         return result;
     }
 
-    /**
-     * @param id
-     * @return cn.edu.hfut.xc.bookauthordemo.common.util.Result
-     * @description 根据主键查询作者信息
-     * @method selectByPrimaryKey
-     */
-    @RequestMapping(value = "/selectAuthorBook/{id}", method = RequestMethod.GET)
-    public Result selectAuthorBook(@PathVariable String id) {
-        Result result = new Result();
-        try {
-            result = authorService.selectAuthorBook(id);
-        } catch (Exception e) {
-            result.setRetCode(Result.RECODE_ERROR);
-            result.setErrMsg("方法执行异常");
-            logger.error("方法执行异常" + e.getMessage() + e);
-            throw new RuntimeException(e);
-        }
-        return result;
-    }
 }

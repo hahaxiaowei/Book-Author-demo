@@ -3,6 +3,8 @@ package cn.edu.hfut.xc.bookauthordemo.provider.dao;
 import cn.edu.hfut.xc.bookauthordemo.common.model.Author;
 import cn.edu.hfut.xc.bookauthordemo.common.model.Library;
 import cn.edu.hfut.xc.bookauthordemo.common.model.LibraryExample;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 public interface LibraryMapper {
@@ -31,4 +33,15 @@ public interface LibraryMapper {
      * 查询所有信息
      */
     List<Library> selectAll();
+
+    Library selectLibraryBookByPrimaryKey(String id);
+
+    List<Library> selectLibraryWithBook();
+
+    /**
+     * 根据国籍id查询该国籍下的图书馆信息
+     * @param libraryNationalityId
+     * @return
+     */
+    List<Library> selectLibraryByNationalityId(@Param("libraryNationalityId") String libraryNationalityId);
 }

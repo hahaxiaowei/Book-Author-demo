@@ -159,6 +159,32 @@ public class AuthorController {
     }
 
     /**
+     * @param id
+     * @return cn.edu.hfut.xc.bookauthordemo.common.util.Result
+     * @description 根据主键查询作者信息和作者所写的图书信息
+     * @method selectByPrimaryKey
+     */
+    @RequestMapping(value = "/selectAuthorBookByPrimaryKey/{id}", method = RequestMethod.GET)
+    public Result selectAuthorBookByPrimaryKey(@PathVariable String id) {
+        Result result = new Result();
+        try {
+            if (StringUtil.isNullOrEmpty(id)) {
+                result.setRetCode(Result.RECODE_VALIDATE_ERROR);
+                result.setErrMsg("作者id不能为空");
+                return result;
+            }
+            result.setData(authorService.selectAuthorBookByPrimaryKey(id));
+            result.setRetCode(Result.RECODE_SUCCESS);
+        } catch (Exception e) {
+            result.setRetCode(Result.RECODE_ERROR);
+            result.setErrMsg("方法执行异常");
+            logger.error("方法执行异常" + e.getMessage() + e);
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+
+    /**
      * @param authorName
      * @param pageNum
      * @param pageSize
@@ -418,21 +444,21 @@ public class AuthorController {
     }
 
     /**
-     * @param id
+     * @param bookId
      * @return cn.edu.hfut.xc.bookauthordemo.common.util.Result
      * @description 根据主键查询作者信息
      * @method selectByPrimaryKey
      */
-    @RequestMapping(value = "/selectAuthorBook/{id}", method = RequestMethod.GET)
-    public Result selectAuthorBook(@PathVariable String id) {
+    @RequestMapping(value = "/selectAuthorsByBookId/{bookId}", method = RequestMethod.GET)
+    public Result selectAuthorsByBookId(@PathVariable String bookId) {
         Result result = new Result();
         try {
-            if (StringUtil.isNullOrEmpty(id)) {
+            if (StringUtil.isNullOrEmpty(bookId)) {
                 result.setRetCode(Result.RECODE_VALIDATE_ERROR);
-                result.setErrMsg("作者id不能为空");
+                result.setErrMsg("图书id不能为空");
                 return result;
             }
-            result.setData(authorService.selectAuthorBook(id));
+            result.setData(authorService.selectAuthorsByBookId(bookId));
             result.setRetCode(Result.RECODE_SUCCESS);
         } catch (Exception e) {
             result.setRetCode(Result.RECODE_ERROR);
@@ -443,5 +469,29 @@ public class AuthorController {
         return result;
     }
 
-
+    /**
+     * @param nationalityId
+     * @return cn.edu.hfut.xc.bookauthordemo.common.util.Result
+     * @description 根据国籍id查询该国籍下的作者信息
+     * @method selectByPrimaryKey
+     */
+    @RequestMapping(value = "/selectAuthorsByNationalityId/{nationalityId}", method = RequestMethod.GET)
+    public Result selectAuthorsByNationalityId(@PathVariable String nationalityId) {
+        Result result = new Result();
+        try {
+            if (StringUtil.isNullOrEmpty(nationalityId)) {
+                result.setRetCode(Result.RECODE_VALIDATE_ERROR);
+                result.setErrMsg("国籍id不能为空");
+                return result;
+            }
+            result.setData(authorService.selectAuthorsByNationalityId(nationalityId));
+            result.setRetCode(Result.RECODE_SUCCESS);
+        } catch (Exception e) {
+            result.setRetCode(Result.RECODE_ERROR);
+            result.setErrMsg("方法执行异常");
+            logger.error("方法执行异常" + e.getMessage() + e);
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
 }

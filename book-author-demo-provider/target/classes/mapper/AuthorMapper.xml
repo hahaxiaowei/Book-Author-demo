@@ -2,35 +2,24 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.edu.hfut.xc.bookauthordemo.provider.dao.AuthorMapper">
   <resultMap id="BaseResultMap" type="cn.edu.hfut.xc.bookauthordemo.common.model.Author">
-    <id column="id" jdbcType="VARCHAR" property="id" />
-    <result column="author_name" jdbcType="VARCHAR" property="authorName" />
-    <result column="phone_number" jdbcType="VARCHAR" property="phoneNumber" />
-    <result column="email_number" jdbcType="VARCHAR" property="emailNumber"/>
-    <result column="user_name" jdbcType="VARCHAR" property="userName"/>
-    <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="age" jdbcType="VARCHAR" property="age" />
-    <result column="sex" jdbcType="VARCHAR" property="sex" />
-    <result column="address" jdbcType="VARCHAR" property="address" />
-    <result column="id_code" jdbcType="VARCHAR" property="idCode" />
-    <result column="personal_remark" jdbcType="VARCHAR" property="personalRemark" />
-    <result column="nationality_id" jdbcType="VARCHAR" property="nationalityId" />
-    <result column="nation" jdbcType="VARCHAR" property="nation" />
-    <result column="head_portrait" jdbcType="VARCHAR" property="headPortrait" />
-    <result column="qq_number" jdbcType="VARCHAR" property="qqNumber" />
-    <result column="wechat_number" jdbcType="VARCHAR" property="wechatNumber" />
-    <result column="sina_microblog_number" jdbcType="VARCHAR" property="sinaMicroblogNumber" />
-  </resultMap>
-  
-  <resultMap id="AuthorBookResultMap" type="cn.edu.hfut.xc.bookauthordemo.common.model.Author" extends="BaseResultMap">
-    <id column="id" jdbcType="VARCHAR" property="id" />
-    <result column="book_name" jdbcType="VARCHAR" property="bookName" />
-    <result column="book_class_id" jdbcType="VARCHAR" property="bookClassId" />
-    <result column="publisher_id" jdbcType="VARCHAR" property="publisherId" />
-    <result column="book_code" jdbcType="VARCHAR" property="bookCode" />
-    <result column="publication_date" jdbcType="VARCHAR" property="publicationDate" />
-    <result column="published_address" jdbcType="VARCHAR" property="publishedAddress" />
-  </resultMap>
-
+  <id column="id" jdbcType="VARCHAR" property="id" />
+  <result column="author_name" jdbcType="VARCHAR" property="authorName" />
+  <result column="phone_number" jdbcType="VARCHAR" property="phoneNumber" />
+  <result column="email_number" jdbcType="VARCHAR" property="emailNumber"/>
+  <result column="user_name" jdbcType="VARCHAR" property="userName"/>
+  <result column="password" jdbcType="VARCHAR" property="password" />
+  <result column="age" jdbcType="VARCHAR" property="age" />
+  <result column="sex" jdbcType="VARCHAR" property="sex" />
+  <result column="address" jdbcType="VARCHAR" property="address" />
+  <result column="id_code" jdbcType="VARCHAR" property="idCode" />
+  <result column="personal_remark" jdbcType="VARCHAR" property="personalRemark" />
+  <result column="nationality_id" jdbcType="VARCHAR" property="nationalityId" />
+  <result column="nation" jdbcType="VARCHAR" property="nation" />
+  <result column="head_portrait" jdbcType="VARCHAR" property="headPortrait" />
+  <result column="qq_number" jdbcType="VARCHAR" property="qqNumber" />
+  <result column="wechat_number" jdbcType="VARCHAR" property="wechatNumber" />
+  <result column="sina_microblog_number" jdbcType="VARCHAR" property="sinaMicroblogNumber" />
+</resultMap>
 
   <sql id="Example_Where_Clause">
     <where>
@@ -61,10 +50,12 @@
       </foreach>
     </where>
   </sql>
+
   <sql id="Base_Column_List">
     id, author_name, phone_number,email_number,user_name,password, age, sex, address, id_code, personal_remark,
     nationality_id, nation, head_portrait, qq_number, wechat_number, sina_microblog_number
   </sql>
+
   <select id="selectByExample" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.AuthorExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
@@ -80,31 +71,27 @@
       order by ${orderByClause}
     </if>
   </select>
+
+  <!--根据主键查询作者信息-->
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
+    SELECT *
     from tbl_author
-    where id = #{id,jdbcType=VARCHAR}
+    WHERE id = #{id,jdbcType = VARCHAR}
   </select>
 
-<!--根据作者id查询作者和该作者所写的书-->
-  <select id="selectAuthorBook" parameterType="java.lang.String" resultMap="AuthorBookResultMap">
-  SELECT tbl_author.id, tbl_author.author_name, tbl_author.phone_number,tbl_author.email_number,tbl_author.user_name,tbl_author.password, tbl_author.age, tbl_author.sex, tbl_author.address, tbl_author.id_code, tbl_author.personal_remark,
-    tbl_author.nationality_id, tbl_author.nation, tbl_author.head_portrait, tbl_author.qq_number, tbl_author.wechat_number, tbl_author.sina_microblog_number, tbl_book.id AS id , tbl_book.book_name AS bookName, tbl_book.book_class_id AS bookClassId, tbl_book.publisher_id AS publisherId, tbl_book.book_code AS bookCode, tbl_book.publication_date AS publicationDate, tbl_book.published_address AS publishedAddress
-    from tbl_author left join tbl_author_book on tbl_author.id = tbl_author_book.author_id left join tbl_book on tbl_author_book.book_id = tbl_book.id
-    where tbl_author.id = #{id,jdbcType=VARCHAR}
+  <!--**********************************************************根据图书id查询图书作者信息********************************************-->
+  <select id="selectAuthorsByBookId" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT *
+    FROM tbl_author
+    WHERE id IN (SELECT author_id FROM tbl_author_book WHERE book_id = #{bookId})
   </select>
 
-  <!--插入作者和作者所写的书籍信息-->
-  <insert id="insertAuthorBook" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.AuthorWithBook">
-    <selectKey keyProperty="id" resultType="String" order="BEFORE">
-      select replace(uuid(),'-','') from dual
-    </selectKey>
-    insert into tbl_author_book(id, author_id, book_id,
-    author_name, book_name)
-    values (#{id,jdbcType=VARCHAR},#{tbl_author.id,jdbcType=VARCHAR}, #{tbl_book.id,jdbcType=VARCHAR},
-      #{tbl_author.authorName,jdbcType=VARCHAR}, #{tbl_book.bookName,jdbcType=VARCHAR})
-  </insert>
+  <!--根据国籍id查询该国籍下的作者信息-->
+  <select id="selectAuthorsByNationalityId" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT * FROM
+    tbl_author
+    WHERE nationality_id = #{nationalityId,jdbcType = VARCHAR }
+  </select>
 
   <!--根据作者表中的某个字段查询数据-->
   <select id="selectByColumn" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Author" resultMap="BaseResultMap">
@@ -197,7 +184,7 @@
     where id_code = #{idCode,jdbcType=VARCHAR}
   </select>
 
-  <select id="selectAll" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Author" resultMap="BaseResultMap">
+  <select id="selectAll" resultMap="BaseResultMap">
     SELECT
     <include refid="Base_Column_List"/>
     from tbl_author

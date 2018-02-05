@@ -20,7 +20,7 @@ import static org.junit.Assert.*;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = BookAuthorDemoProviderApplication.class)
-public class AuthorServiceImplTest {
+public class AuthorTest {
     private static Logger logger = LoggerFactory.getLogger(AuthorServiceImpl.class);
     @Autowired
     private AuthorService authorService;
@@ -116,4 +116,11 @@ public class AuthorServiceImplTest {
         Result result = authorService.getVerificatCode(phoneNum);
         logger.info("结果为：" + result);
     }
+
+//    @Test
+//    public void selectAuthorBook(){
+//        String id = "e6d8d921f9ce11e7a28b88d7f63dcda2";
+//        Author author =  authorService.selectAuthorBook(id);
+//        logger.info("查询的作者信息为"+author);
+//    }
 }

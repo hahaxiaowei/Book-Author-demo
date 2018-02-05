@@ -3,7 +3,6 @@ package cn.edu.hfut.xc.bookauthordemo.provider.service.Impl;
 import cn.edu.hfut.xc.bookauthordemo.common.model.Author;
 import cn.edu.hfut.xc.bookauthordemo.common.model.AuthorExample;
 import cn.edu.hfut.xc.bookauthordemo.common.model.AuthorInfo;
-import cn.edu.hfut.xc.bookauthordemo.common.model.AuthorWithBook;
 import cn.edu.hfut.xc.bookauthordemo.common.util.EncryptUtil;
 import cn.edu.hfut.xc.bookauthordemo.common.util.Pagination;
 import cn.edu.hfut.xc.bookauthordemo.common.util.Result;
@@ -11,9 +10,6 @@ import cn.edu.hfut.xc.bookauthordemo.common.util.StringUtil;
 import cn.edu.hfut.xc.bookauthordemo.provider.config.BusinessUtils;
 import cn.edu.hfut.xc.bookauthordemo.provider.config.RedisUtils;
 import cn.edu.hfut.xc.bookauthordemo.provider.dao.AuthorMapper;
-import cn.edu.hfut.xc.bookauthordemo.provider.dao.AuthorWithBookMapper;
-import cn.edu.hfut.xc.bookauthordemo.provider.dao.BookMapper;
-import cn.edu.hfut.xc.bookauthordemo.provider.dao.NationalityMapper;
 import cn.edu.hfut.xc.bookauthordemo.provider.service.AuthorService;
 import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.Page;
@@ -37,12 +33,6 @@ public class AuthorServiceImpl implements AuthorService {
 
     @Autowired
     private AuthorMapper authorMapper;
-
-    @Autowired
-    private AuthorWithBookMapper authorWithBookMapper;
-
-    @Autowired
-    private BookMapper bookMapper;
 
     @Autowired
     private TelLogin telLogin;
@@ -285,13 +275,30 @@ public class AuthorServiceImpl implements AuthorService {
         return tag;
     }
 
+    /**
+     * @param bookId
+     * @return java.util.List<cn.edu.hfut.xc.bookauthordemo.common.model.Author>
+     * @description 根据图书id查询该图书的作者信息
+     * @method selectByBookId
+     */
+    @Override
+    public List<Author> selectAuthorsByBookId(String bookId) {
+
+        return authorMapper.selectAuthorsByBookId(bookId);
+    }
+
     @Override
     public List<Author> selectAll() {
         return authorMapper.selectAll();
     }
 
     @Override
-    public Author selectAuthorBook(String id) {
-        return authorMapper.selectAuthorBook(id);
+    public Author selectAuthorBookByPrimaryKey(String id) {
+        return authorMapper.selectAuthorBookByPrimaryKey(id);
+    }
+
+    @Override
+    public List<Author> selectAuthorsByNationalityId(String nationalityId) {
+        return authorMapper.selectAuthorsByNationalityId(nationalityId);
     }
 }

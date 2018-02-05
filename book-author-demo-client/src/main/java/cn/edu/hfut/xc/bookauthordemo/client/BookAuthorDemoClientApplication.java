@@ -15,7 +15,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableDiscoveryClient//允许eureka注册中心发现
 @EnableFeignClients //允许Feign
 @EnableHystrix //允许负载均衡
-@EnableSwagger2 //允许Swagger
+//@EnableSwagger2 //允许Swagger
 public class BookAuthorDemoClientApplication {
     public static void main(String[] args) {
         SpringApplication.run(BookAuthorDemoClientApplication.class,args);

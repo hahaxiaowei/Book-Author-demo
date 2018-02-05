@@ -2,11 +2,10 @@ package cn.edu.hfut.xc.bookauthordemo.provider.dao;
 
 import cn.edu.hfut.xc.bookauthordemo.common.model.Author;
 import cn.edu.hfut.xc.bookauthordemo.common.model.AuthorExample;
+import cn.edu.hfut.xc.bookauthordemo.common.model.Book;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
-import java.util.Map;
 
 public interface AuthorMapper {
     long countByExample(AuthorExample example);
@@ -63,5 +62,27 @@ public interface AuthorMapper {
      */
     List<Author> selectAll();
 
-    Author selectAuthorBook(String id);
+    /**
+     * @param bookId
+     * @return java.util.List<cn.edu.hfut.xc.bookauthordemo.common.model.Author>
+     * @description 根据bookId查询作者信息
+     * @method selectByBookId
+     */
+    List<Author> selectAuthorsByBookId(@Param("bookId") String bookId);
+
+    /**
+     * @param nationalityId
+     * @return java.util.List<cn.edu.hfut.xc.bookauthordemo.common.model.Author>
+     * @description 根据国籍id查询该国籍下的作者信息
+     * @method selectAuthorsByNationalityId
+     */
+    List<Author> selectAuthorsByNationalityId(@Param("nationalityId") String nationalityId);
+
+    /**
+     * 根据主键查询作者和该作者所写的书
+     * @param id
+     * @return
+     */
+    Author selectAuthorBookByPrimaryKey(String id);
+
 }

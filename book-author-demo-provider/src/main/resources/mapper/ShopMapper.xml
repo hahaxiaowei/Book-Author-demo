@@ -9,6 +9,19 @@
     <result column="shop_life" jdbcType="VARCHAR" property="shopLife" />
     <result column="shop_nationality_id" jdbcType="VARCHAR" property="shopNationalityId" />
   </resultMap>
+
+  <!--<resultMap id="ShopBookResultMap" type="cn.edu.hfut.xc.bookauthordemo.common.model.Shop">-->
+    <!--<collection property="books" ofType="cn.edu.hfut.xc.bookauthordemo.common.model.Book">-->
+      <!--<id column="id" jdbcType="VARCHAR" property="id"/>-->
+      <!--<result column="book_name" jdbcType="VARCHAR" property="bookName"/>-->
+      <!--<result column="book_class_id" jdbcType="VARCHAR" property="bookClassId"/>-->
+      <!--<result column="publisher_id" jdbcType="VARCHAR" property="publisherId"/>-->
+      <!--<result column="book_code" jdbcType="VARCHAR" property="bookCode"/>-->
+      <!--<result column="publication_date" jdbcType="VARCHAR" property="publicationDate"/>-->
+      <!--<result column="published_address" jdbcType="VARCHAR" property="publishedAddress"/>-->
+    <!--</collection>-->
+  <!--</resultMap>-->
+
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -38,9 +51,16 @@
       </foreach>
     </where>
   </sql>
+
   <sql id="Base_Column_List">
     id, shop_name, shop_address, shop_creation_time, shop_life, shop_nationality_id
   </sql>
+
+  <sql id="Shop_Book_Column_List">
+    tbl_shop.id, tbl_shop.shop_name, tbl_shop.shop_address, tbl_shop.shop_creation_time, tbl_shop.shop_life, tbl_shop.shop_nationality_id,
+    tbl_book.id, tbl_book.book_name, tbl_book.book_class_id, tbl_book.publisher_id, tbl_book.book_code, tbl_book.publication_date, tbl_book.published_address
+  </sql>
+
   <select id="selectByExample" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.ShopExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
@@ -56,6 +76,7 @@
       order by ${orderByClause}
     </if>
   </select>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -64,12 +85,25 @@
   </select>
 
   <!--查询所有信息-->
-  <select id="selectAll" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Shop" resultMap="BaseResultMap">
+  <select id="selectAll" resultMap="BaseResultMap">
     SELECT
     <include refid="Base_Column_List"/>
     from tbl_shop
   </select>
 
+  <!--根据店主id查询该店主所拥有的商店信息-->
+  <select id="selectShopByShopOwnerId" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT * FROM tbl_shop WHERE id IN (SELECT shop_id FROM tbl_shop_showner WHERE shopowner_id = #{shopOwnerId})
+  </select>
+
+  <!--根据国籍id查询该国籍下的商店信息-->
+  <select id="selectShopByNationalityId" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT *
+    FROM tbl_shop
+    WHERE shop_nationality_id = #{shopNationalityId,jdbcType =VARCHAR }
+  </select>
+
+  <!--*************************************************************************************************************************************************************-->
   <!--根据图书馆表中的某个字段查询数据-->
   <select id="selectByColumn" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Shop" resultMap="BaseResultMap">
     select

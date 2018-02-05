@@ -8,6 +8,8 @@
     <result column="author_name" jdbcType="VARCHAR" property="authorName" />
     <result column="book_name" jdbcType="VARCHAR" property="bookName" />
   </resultMap>
+
+
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -37,6 +39,8 @@
       </foreach>
     </where>
   </sql>
+
+
   <sql id="Base_Column_List">
     id, author_id, book_id, author_name, book_name
   </sql>

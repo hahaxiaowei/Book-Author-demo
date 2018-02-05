@@ -4,6 +4,8 @@ import cn.edu.hfut.xc.bookauthordemo.common.model.Author;
 import cn.edu.hfut.xc.bookauthordemo.common.model.Shop;
 import cn.edu.hfut.xc.bookauthordemo.common.model.ShopOwner;
 import cn.edu.hfut.xc.bookauthordemo.common.model.ShopOwnerExample;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 public interface ShopOwnerMapper {
@@ -31,7 +33,16 @@ public interface ShopOwnerMapper {
     List<ShopOwner> selectByColumn(ShopOwner shopOwner);
 
     /**
-     * 查询所有作者信息
+     * 查询所有店主信息
      */
     List<ShopOwner> selectAll();
+
+    /**
+     * 根据商店的id查询该商店的店主信息
+     * @param shopId
+     * @return
+     */
+    List<ShopOwner> selectShopOwnerByShopId(@Param("shopId") String shopId);
+
+    List<ShopOwner> selectShopOwnerByNationalityId(@Param("shopOwnerNationalityId") String shopOwnerNationalityId );
 }

@@ -97,7 +97,7 @@
   </select>
 
   <!--查询所有信息-->
-  <select id="selectAll" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.ShopOwner" resultMap="BaseResultMap">
+  <select id="selectAll" resultMap="BaseResultMap">
     SELECT
     <include refid="Base_Column_List"/>
     from tbl_shopowner
@@ -107,6 +107,18 @@
     delete from tbl_shopowner
     where id = #{id,jdbcType=VARCHAR}
   </delete>
+
+  <select id="selectShopOwnerByShopId" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT * FROM tbl_ShopOwner WHERE id IN (SELECT shopowner_id FROM tbl_shop_shopowner WHERE shop_id = #{shopId})
+  </select>
+
+  <!--根据国籍查询该国籍下的店主信息-->
+  <select id="selectShopOwnerByNationalityId" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT *
+    FROM tbl_shopowner
+    WHERE shop_owner_nationality_id = #{shopOwnerNationalityId,jdbcType =VARCHAR }
+  </select>
+
   <insert id="insert" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.ShopOwner">
     <selectKey keyProperty="id" resultType="String" order="BEFORE">
       select replace(uuid(),'-','') from dual

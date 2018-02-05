@@ -3,6 +3,8 @@ package cn.edu.hfut.xc.bookauthordemo.provider.dao;
 import cn.edu.hfut.xc.bookauthordemo.common.model.Author;
 import cn.edu.hfut.xc.bookauthordemo.common.model.Publisher;
 import cn.edu.hfut.xc.bookauthordemo.common.model.PublisherExample;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 public interface PublisherMapper {
@@ -33,4 +35,6 @@ public interface PublisherMapper {
      * 查询所有信息
      */
     List<Publisher> selectAll();
+
+    List<Publisher> selectPublisherByNationalityId(@Param("publisherNationalityId") String publisherNationalityId);
 }

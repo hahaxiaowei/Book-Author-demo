@@ -9,27 +9,65 @@
         <result column="book_code" jdbcType="VARCHAR" property="bookCode"/>
         <result column="publication_date" jdbcType="VARCHAR" property="publicationDate"/>
         <result column="published_address" jdbcType="VARCHAR" property="publishedAddress"/>
+        <!--<collection property="authors" ofType="cn.edu.hfut.xc.bookauthordemo.common.model.Author" column="id" select="cn.edu.hfut.xc.bookauthordemo.provider.dao.AuthorMapper.selectAuthorsByBookId">-->
+        <!--</collection>-->
     </resultMap>
 
-    <resultMap id="BookAuthorResultMap" type="cn.edu.hfut.xc.bookauthordemo.common.model.Book" extends="BaseResultMap">
-        <id column="id" jdbcType="VARCHAR" property="id"/>
-        <result column="author_name" jdbcType="VARCHAR" property="authorName"/>
-        <result column="phone_number" jdbcType="VARCHAR" property="phoneNumber"/>
-        <result column="email_number" jdbcType="VARCHAR" property="emailNumber"/>
-        <result column="user_name" jdbcType="VARCHAR" property="userName"/>
-        <result column="password" jdbcType="VARCHAR" property="password"/>
-        <result column="age" jdbcType="VARCHAR" property="age"/>
-        <result column="sex" jdbcType="VARCHAR" property="sex"/>
-        <result column="address" jdbcType="VARCHAR" property="address"/>
-        <result column="id_code" jdbcType="VARCHAR" property="idCode"/>
-        <result column="personal_remark" jdbcType="VARCHAR" property="personalRemark"/>
-        <result column="nationality_id" jdbcType="VARCHAR" property="nationalityId"/>
-        <result column="nation" jdbcType="VARCHAR" property="nation"/>
-        <result column="head_portrait" jdbcType="VARCHAR" property="headPortrait"/>
-        <result column="qq_number" jdbcType="VARCHAR" property="qqNumber"/>
-        <result column="wechat_number" jdbcType="VARCHAR" property="wechatNumber"/>
-        <result column="sina_microblog_number" jdbcType="VARCHAR" property="sinaMicroblogNumber"/>
-    </resultMap>
+    <!--<resultMap id="BookAuthorResultMap" type="cn.edu.hfut.xc.bookauthordemo.common.model.Book" extends="BaseResultMap">-->
+        <!--<collection property="authors" ofType="cn.edu.hfut.xc.bookauthordemo.common.model.Author">-->
+        <!--<id column="id" jdbcType="VARCHAR" property="id"/>-->
+        <!--<result column="author_name" jdbcType="VARCHAR" property="authorName"/>-->
+        <!--<result column="phone_number" jdbcType="VARCHAR" property="phoneNumber"/>-->
+        <!--<result column="email_number" jdbcType="VARCHAR" property="emailNumber"/>-->
+        <!--<result column="user_name" jdbcType="VARCHAR" property="userName"/>-->
+        <!--<result column="password" jdbcType="VARCHAR" property="password"/>-->
+        <!--<result column="age" jdbcType="VARCHAR" property="age"/>-->
+        <!--<result column="sex" jdbcType="VARCHAR" property="sex"/>-->
+        <!--<result column="address" jdbcType="VARCHAR" property="address"/>-->
+        <!--<result column="id_code" jdbcType="VARCHAR" property="idCode"/>-->
+        <!--<result column="personal_remark" jdbcType="VARCHAR" property="personalRemark"/>-->
+        <!--<result column="nationality_id" jdbcType="VARCHAR" property="nationalityId"/>-->
+        <!--<result column="nation" jdbcType="VARCHAR" property="nation"/>-->
+        <!--<result column="head_portrait" jdbcType="VARCHAR" property="headPortrait"/>-->
+        <!--<result column="qq_number" jdbcType="VARCHAR" property="qqNumber"/>-->
+        <!--<result column="wechat_number" jdbcType="VARCHAR" property="wechatNumber"/>-->
+        <!--<result column="sina_microblog_number" jdbcType="VARCHAR" property="sinaMicroblogNumber"/>-->
+        <!--</collection>-->
+    <!--</resultMap>-->
+
+    <!--<resultMap id="BookLibraryResultMap" type="cn.edu.hfut.xc.bookauthordemo.common.model.Book" extends="BaseResultMap">-->
+        <!--<collection property="librarys" ofType="cn.edu.hfut.xc.bookauthordemo.common.model.Library">-->
+            <!--<id column="id" jdbcType="VARCHAR" property="id" />-->
+            <!--<result column="library_name" jdbcType="VARCHAR" property="libraryName" />-->
+            <!--<result column="library_address" jdbcType="VARCHAR" property="libraryAddress" />-->
+            <!--<result column="library_nationality_id" jdbcType="VARCHAR" property="libraryNationalityId" />-->
+            <!--<result column="library_bulid_time" jdbcType="VARCHAR" property="libraryBulidTime" />-->
+            <!--<result column="library_life" jdbcType="VARCHAR" property="libraryLife" />-->
+        <!--</collection>-->
+    <!--</resultMap>-->
+
+
+    <!--<resultMap id="BookShopResultMap" type="cn.edu.hfut.xc.bookauthordemo.common.model.Shop" extends="BaseResultMap">-->
+        <!--<collection property="shops" ofType="cn.edu.hfut.xc.bookauthordemo.common.model.Shop">-->
+            <!--<id column="id" jdbcType="VARCHAR" property="id" />-->
+            <!--<result column="shop_name" jdbcType="VARCHAR" property="shopName" />-->
+            <!--<result column="shop_address" jdbcType="VARCHAR" property="shopAddress" />-->
+            <!--<result column="shop_creation_time" jdbcType="VARCHAR" property="shopCreationTime" />-->
+            <!--<result column="shop_life" jdbcType="VARCHAR" property="shopLife" />-->
+            <!--<result column="shop_nationality_id" jdbcType="VARCHAR" property="shopNationalityId" />-->
+        <!--</collection>-->
+    <!--</resultMap>-->
+
+    <!--<resultMap id="BookNationalityResultMap" type="cn.edu.hfut.xc.bookauthordemo.common.model.Nationality" extends="BaseResultMap">-->
+        <!--<collection property="nationalitys" ofType="cn.edu.hfut.xc.bookauthordemo.common.model.Nationality">-->
+            <!--<id column="id" jdbcType="VARCHAR" property="id" />-->
+            <!--<result column="nationality_name" jdbcType="VARCHAR" property="nationalityName" />-->
+            <!--<result column="nationality_life" jdbcType="VARCHAR" property="nationalityLife" />-->
+            <!--<result column="nationality_created_time" jdbcType="VARCHAR" property="nationalityCreatedTime" />-->
+            <!--<result column="nationality_location" jdbcType="VARCHAR" property="nationalityLocation" />-->
+        <!--</collection>-->
+    <!--</resultMap>-->
+
 
 
     <sql id="Example_Where_Clause">
@@ -62,10 +100,10 @@
             </foreach>
         </where>
     </sql>
+
     <sql id="Base_Column_List">
     id, book_name, book_class_id, publisher_id, book_code, publication_date, published_address
   </sql>
-
 
     <select id="selectByExample" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.BookExample"
             resultMap="BaseResultMap">
@@ -92,35 +130,102 @@
         where id = #{id,jdbcType=VARCHAR}
     </select>
 
-    <!--根据图书信息查询图书和该图书所对应的作者-->
-    <select id="selectBookAuthor" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Book"
-            resultMap="BookAuthorResultMap">
-        SELECT tbl_author.id, tbl_author.author_name,
-        tbl_author.phone_number,tbl_author.email_number,tbl_author.user_name,tbl_author.password, tbl_author.age,
-        tbl_author.sex, tbl_author.address, tbl_author.id_code, tbl_author.personal_remark,
-        tbl_author.nationality_id, tbl_author.nation, tbl_author.head_portrait, tbl_author.qq_number,
-        tbl_author.wechat_number, tbl_author.sina_microblog_number, tbl_book.id AS id , tbl_book.book_name AS bookName,
-        tbl_book.book_class_id AS bookClassId, tbl_book.publisher_id AS publisherId, tbl_book.book_code AS bookCode,
-        tbl_book.publication_date AS publicationDate, tbl_book.published_address AS publishedAddress
-        from tbl_book left join tbl_author_book on tbl_book.id = tbl_author_book.book_id left join tbl_author on
-        tbl_author_book.author_id = tbl_author.id
-        where
-        <!--当id为初始值0，不再使用id作为查询条件 -->
-        <if test="id !=null and id !=''">
-            tbl_book.id = #{id,jdbcType=VARCHAR}
-        </if>
-        <!-- 当bookName为空或为空串时，不再使用name作为查询条件 -->
-        <if test="bookName !=null and bookName !=''">
-            tbl_book.book_name = #{bookName ,jdbcType=VARCHAR}
-        </if>
+    <!--//根据作者的id查询该作者所写的书-->
+    <select id="selectBooksByAuthorId" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select * from tbl_book where id IN (SELECT book_id from tbl_author_book WHERE author_id = #{authorId})
     </select>
 
+    <!--根据图书馆id查询图书馆所收藏的书-->
+    <select id="selectBooksByLibraryId" parameterType="java.lang.String" resultMap="BaseResultMap">
+        SELECT * FROM tbl_book WHERE id IN (SELECT book_id FROM tbl_book_library WHERE library_id = #{libraryId})
+    </select>
+
+    <!--根据商店id查询该商店所售卖的书-->
+    <select id="selectBooksByShopId" parameterType="java.lang.String" resultMap="BaseResultMap">
+        SELECT * FROM tbl_book WHERE id IN (SELECT book_id FROM tbl_book_shop WHERE shop_id = #{shopId})
+    </select>
+
+    <!--根据国籍id查询该国发行的书-->
+    <select id="selectBooksByNationalityId" parameterType="java.lang.String" resultMap="BaseResultMap">
+        SELECT * FROM tbl_book WHERE id IN (SELECT book_id FROM tbl_book_Nationality WHERE nationality_id = #{nationalityId})
+    </select>
+
+    <!--&lt;!&ndash;**********************************************************图书和图书作者信息查询****************************************************************************************************&ndash;&gt;-->
+    <!--&lt;!&ndash;根据主键查询图书和该图书的作者信息&ndash;&gt;-->
+    <!--<select id="selectBookAuthorByPrimaryKey" parameterType="java.lang.String" resultMap="BookAuthorResultMap">-->
+        <!--SELECT-->
+        <!--<include refid="Book_Author_Column_List"/>-->
+        <!--from tbl_book book LEFT JOIN tbl_author_book author_book ON book.id = author_book.book_id LEFT JOIN tbl_author-->
+        <!--author ON author.id = author_book.author_id-->
+        <!--WHERE book.id = #{id ,jdbcType = VARCHAR}-->
+    <!--</select>-->
+
+    <!--&lt;!&ndash;查询所有图书信息，包括图书的作者信息&ndash;&gt;-->
+    <!--<select id="selectBookWithAuthor" resultMap="BookAuthorResultMap">-->
+        <!--SELECT-->
+        <!--<include refid="Book_Author_Column_List"/>-->
+        <!--FROM tbl_book book LEFT JOIN tbl_author_book author_book ON book.id = author_book.book_id LEFT JOIN tbl_author-->
+        <!--author ON author.id = author_book.author_id-->
+    <!--</select>-->
+
+    <!--&lt;!&ndash;****************************************************************图书和图书馆信息查询*******************************************************************&ndash;&gt;-->
+    <!--&lt;!&ndash;根据主键查询图书和该图书所在的图书馆信息&ndash;&gt;-->
+
+    <!--<select id="selectBookLibraryByPrimaryKey" parameterType="java.lang.String" resultMap="BookLibraryResultMap">-->
+        <!--SELECT-->
+        <!--<include refid="Book_Library_Column_List"/>-->
+        <!--from tbl_book book LEFT join tbl_book_library book_library ON book.id = book_library.book_id LEFT JOIN tbl_library library ON library.id = book_library.library_id-->
+        <!--WHERE book.id = #{id ,jdbcType = VARCHAR}-->
+    <!--</select>-->
+
+    <!--&lt;!&ndash;查询所有图书和图书所在的图书馆信息&ndash;&gt;-->
+    <!--<select id="selectBookWithLibrary" resultMap="BookLibraryResultMap">-->
+        <!--SELECT-->
+        <!--<include refid="Book_Library_Column_List"/>-->
+        <!--from tbl_book book LEFT join tbl_book_library book_library ON book.id = book_library.book_id LEFT JOIN tbl_library library ON library.id = book_library.library_id-->
+    <!--</select>-->
+
+    <!--&lt;!&ndash;********************************************************************图书和书店信息******************************************************************************************************&ndash;&gt;-->
+    <!--&lt;!&ndash;根据主键查询图书和售卖该图书的商店信息&ndash;&gt;-->
+    <!--<select id="selectBookShopByPrimaryKey" parameterType="java.lang.String" resultMap="BookShopResultMap">-->
+        <!--SELECT-->
+        <!--<include refid="Book_Shop_Column_List"/>-->
+        <!--from tbl_book book LEFT join tbl_book_shop book_shop ON book.id = book_shop.book_id LEFT JOIN tbl_shop shop ON shop.id = book_shop.shop_id-->
+        <!--WHERE book.id = #{id ,jdbcType = VARCHAR}-->
+    <!--</select>-->
+    <!--&lt;!&ndash;查询所有图书信息包括售卖该图书的商店信息&ndash;&gt;-->
+    <!--<select id="selectBookWithShop" resultMap="BookShopResultMap">-->
+        <!--SELECT-->
+        <!--<include refid="Book_Shop_Column_List"/>-->
+        <!--from tbl_book book LEFT join tbl_book_shop book_shop ON book.id = book_shop.book_id LEFT JOIN tbl_shop shop ON shop.id = book_shop.shop_id-->
+    <!--</select>-->
+
+
+    <!--&lt;!&ndash;**********************************************************************图书和国籍信息***********************************************************************************************************&ndash;&gt;-->
+    <!--&lt;!&ndash;根据主键查询图书和图书的出版国家信息&ndash;&gt;-->
+    <!--<select id="selectBookNationaltiryByPrimaryKey" parameterType="java.lang.String" resultMap="BookNationalityResultMap">-->
+        <!--select-->
+        <!--<include refid="Book_Nationality_Column_List"/>-->
+        <!--from tbl_book book LEFT JOIN tbl_book_nationality book_nationality ON  book.id = book_nationality.book_id LEFT JOIN tbl_nationality nationality ON book_nationality.id = book_nationality.nationality_id-->
+        <!--WHERE book.id = #{id ,jdbcType = VARCHAR}-->
+    <!--</select>-->
+
+    <!--&lt;!&ndash;查询所有图书和售卖该图书的商店信息&ndash;&gt;-->
+    <!--<select id="selectBookNationaltiy" resultMap="BookNationalityResultMap">-->
+        <!--select-->
+        <!--<include refid="Book_Nationality_Column_List"/>-->
+        <!--from tbl_book book LEFT JOIN tbl_book_nationality book_nationality ON  book.id = book_nationality.book_id LEFT JOIN tbl_nationality nationality ON book_nationality.id = book_nationality.nationality_id-->
+    <!--</select>-->
+    <!--&lt;!&ndash;***********************************************************************************************************************************************************************************************&ndash;&gt;-->
+
+
     <!--查询所有信息-->
-    <select id="selectAll" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Book" resultMap="BaseResultMap">
+    <select id="selectAll" resultMap="BaseResultMap">
         SELECT
         <include refid="Base_Column_List"/>
         from tbl_book
     </select>
+
 
     <!--根据图书表中的某个字段查询数据-->
     <select id="selectByColumn" parameterType="cn.edu.hfut.xc.bookauthordemo.common.model.Book"

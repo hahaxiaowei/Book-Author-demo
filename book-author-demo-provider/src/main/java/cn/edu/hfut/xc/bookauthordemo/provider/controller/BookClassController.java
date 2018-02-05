@@ -1,6 +1,5 @@
 package cn.edu.hfut.xc.bookauthordemo.provider.controller;
 
-import cn.edu.hfut.xc.bookauthordemo.common.model.Author;
 import cn.edu.hfut.xc.bookauthordemo.common.model.BookClass;
 import cn.edu.hfut.xc.bookauthordemo.common.util.Pagination;
 import cn.edu.hfut.xc.bookauthordemo.common.util.Result;
@@ -12,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.UUID;
 
 /**
  * Created by sunwei on 2017/12/8 Time:9:46

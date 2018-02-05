@@ -3,6 +3,7 @@ package cn.edu.hfut.xc.bookauthordemo.provider.service;
 import cn.edu.hfut.xc.bookauthordemo.common.model.Nationality;
 import cn.edu.hfut.xc.bookauthordemo.common.model.Publisher;
 import cn.edu.hfut.xc.bookauthordemo.common.util.Pagination;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -66,4 +67,6 @@ public interface PublisherService {
      * 查询所有信息
      */
     List<Publisher> selectAll();
+
+    List<Publisher> selectPublisherByNationalityId(@Param("publisherNationalityId") String publisherNationalityId);
 }

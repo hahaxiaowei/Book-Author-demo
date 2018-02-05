@@ -12,6 +12,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * Created by sunwei on 2017/12/8 Time:9:47
  */
@@ -166,6 +168,78 @@ public class ShopOwnerController {
             result.setRetCode(Result.RECODE_ERROR);
             result.setErrMsg("selectPageQuery方法执行异常");
             logger.error("selectPageQuery方法执行异常" + e.getMessage() + e);
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+
+    /**
+     * @param shopId
+     * @return cn.edu.hfut.xc.bookauthordemo.common.util.Result
+     * @description 根据商店id，查询该商店的店主信息
+     * @method selectByPrimaryKey
+     */
+    @RequestMapping(value = "/selectShopOwnerByShopId/{shopId}", method = RequestMethod.GET)
+    public Result selectShopOwnerByShopId(@PathVariable String shopId) {
+        Result result = new Result();
+        try {
+            if (StringUtil.isNullOrEmpty(shopId)) {
+                result.setRetCode(Result.RECODE_VALIDATE_ERROR);
+                result.setErrMsg("商店id不能为空");
+                return result;
+            }
+            result.setData(shopOwnerService.selectShopOwnerByShopId(shopId));
+            result.setRetCode(Result.RECODE_SUCCESS);
+        } catch (Exception e) {
+            result.setRetCode(Result.RECODE_ERROR);
+            result.setErrMsg("方法执行异常");
+            logger.error("方法执行异常" + e.getMessage() + e);
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+
+    /**
+     * @param nationalityId
+     * @return cn.edu.hfut.xc.bookauthordemo.common.util.Result
+     * @description 根据国籍id查询该国籍下的店主信息
+     * @method selectByPrimaryKey
+     */
+    @RequestMapping(value = "/selectShopOwnerByNationalityId/{nationalityId}", method = RequestMethod.GET)
+    public Result selectShopOwnerByNationalityId(@PathVariable String nationalityId) {
+        Result result = new Result();
+        try {
+            if (StringUtil.isNullOrEmpty(nationalityId)) {
+                result.setRetCode(Result.RECODE_VALIDATE_ERROR);
+                result.setErrMsg("国籍id不能为空");
+                return result;
+            }
+            result.setData(shopOwnerService.selectShopOwnerByNationalityId(nationalityId));
+            result.setRetCode(Result.RECODE_SUCCESS);
+        } catch (Exception e) {
+            result.setRetCode(Result.RECODE_ERROR);
+            result.setErrMsg("方法执行异常");
+            logger.error("方法执行异常" + e.getMessage() + e);
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+
+    /**
+     * @return cn.edu.hfut.xc.bookauthordemo.common.util.Result
+     * @description 查询所有店主信息
+     * @method selectByColumn
+     */
+    @RequestMapping(value = "/selectAll", method = RequestMethod.GET)
+    public Result selectAll(){
+        Result result = new Result();
+        try {
+            List<ShopOwner> list = shopOwnerService.selectAll();
+            result.setData(list);
+        } catch (Exception e) {
+            result.setRetCode(Result.RECODE_ERROR);
+            result.setErrMsg("方法执行出错");
+            logger.error("方法执行出错", e);
             throw new RuntimeException(e);
         }
         return result;

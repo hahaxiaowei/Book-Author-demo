@@ -118,11 +118,4 @@ public interface AuthorService {
     @RequestMapping(value ="/author/selectAll",method = RequestMethod.GET)
     Result selectAll();
 
-    /**
-     * 根据主键查询作者信息
-     * @param id
-     * @return
-     */
-    @RequestMapping(value ="/author/selectAuthorBook/{id}",method = RequestMethod.GET)
-    Result selectAuthorBook(@PathVariable(value = "id") String id);
 }

@@ -1,5 +1,7 @@
 package cn.edu.hfut.xc.bookauthordemo.common.model;
 
+import java.util.List;
+
 public class Nationality {
     private String id;
 
@@ -49,5 +51,16 @@ public class Nationality {
 
     public void setNationalityLocation(String nationalityLocation) {
         this.nationalityLocation = nationalityLocation == null ? null : nationalityLocation.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "Nationality{" +
+                "id='" + id + '\'' +
+                ", nationalityName='" + nationalityName + '\'' +
+                ", nationalityLife='" + nationalityLife + '\'' +
+                ", nationalityCreatedTime='" + nationalityCreatedTime + '\'' +
+                ", nationalityLocation='" + nationalityLocation + '\'' +
+                '}';
     }
 }

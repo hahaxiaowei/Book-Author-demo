@@ -68,4 +68,19 @@ public class ShopOwnerServiceImpl implements ShopOwnerService {
     public int updateByPrimaryKey(ShopOwner record) {
         return shopOwnerMapper.updateByPrimaryKey(record);
     }
+
+    @Override
+    public List<ShopOwner> selectShopOwnerByShopId(String shopId) {
+        return shopOwnerMapper.selectShopOwnerByShopId(shopId);
+    }
+
+    @Override
+    public List<ShopOwner> selectShopOwnerByNationalityId(String nationalityId) {
+        return shopOwnerMapper.selectShopOwnerByNationalityId(nationalityId);
+    }
+
+    @Override
+    public List<ShopOwner> selectAll() {
+        return shopOwnerMapper.selectAll();
+    }
 }

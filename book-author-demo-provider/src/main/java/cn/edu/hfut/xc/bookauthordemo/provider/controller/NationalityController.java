@@ -173,16 +173,18 @@ public class NationalityController {
     }
 
     /**
-     * @param nationality
+     * @param nationalityName
      * @return cn.edu.hfut.xc.bookauthordemo.common.util.Result
      * @description 根据国籍某个字段来查询国籍信息
      * @method selectByColumn
      */
-    @RequestMapping(value = "/selectColumn", method = RequestMethod.GET)
-    public Result selectByColumn(@RequestBody Nationality nationality) {
+    @RequestMapping(value = "/selectNationalityByNationalityName/{nationalityName}", method = RequestMethod.GET)
+    public Result selectNationalityByNationalityName(@PathVariable String nationalityName) {
 
         Result result = new Result();
         try {
+            Nationality nationality = new Nationality();
+            nationality.setNationalityName(nationalityName);
             List<Nationality> list = nationalityService.selectByColumn(nationality);
             result.setData(list);
         } catch (Exception e) {

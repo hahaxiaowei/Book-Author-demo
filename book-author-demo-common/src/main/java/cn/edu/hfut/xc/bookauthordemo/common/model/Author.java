@@ -37,8 +37,6 @@ public class Author {
 
     private String sinaMicroblogNumber;
 
-    private List<Book> books;
-
     public String getId() {
         return id;
     }
@@ -173,13 +171,5 @@ public class Author {
 
     public void setSinaMicroblogNumber(String sinaMicroblogNumber) {
         this.sinaMicroblogNumber = sinaMicroblogNumber == null ? null : sinaMicroblogNumber.trim();
-    }
-
-    public List<Book> getBooks() {
-        return books;
-    }
-
-    public void setBooks(List<Book> books) {
-        this.books = books;
     }
 }

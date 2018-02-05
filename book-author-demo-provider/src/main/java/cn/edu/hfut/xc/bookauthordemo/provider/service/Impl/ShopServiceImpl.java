@@ -70,4 +70,14 @@ public class ShopServiceImpl implements ShopService {
     public List<Shop> selectAll() {
         return shopMapper.selectAll();
     }
+
+    @Override
+    public List<Shop> selectShopByShopOwnerId(String shopOwnerId) {
+        return shopMapper.selectShopByShopOwnerId(shopOwnerId);
+    }
+
+    @Override
+    public List<Shop> selectShopByNationalityId(String nationalityId) {
+        return shopMapper.selectShopByNationalityId(nationalityId);
+    }
 }

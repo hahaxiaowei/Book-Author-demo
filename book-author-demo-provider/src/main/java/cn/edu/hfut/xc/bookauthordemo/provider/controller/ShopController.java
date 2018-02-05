@@ -57,7 +57,7 @@ public class ShopController {
     public Result insertSelective(@RequestBody Shop shop) {
         Result result = new Result();
         try {
-            shopService.insert(shop);
+            shopService.insertSelective(shop);
             result.setData(shop.getId());
             result.setRetCode(Result.RECODE_SUCCESS);
             logger.info("插入商店信息成功,生成的id为" + result.getData());
@@ -186,6 +186,58 @@ public class ShopController {
             result.setRetCode(Result.RECODE_ERROR);
             result.setErrMsg("方法执行出错");
             logger.error("方法执行出错", e);
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+
+    /**
+     * @param shopOwnerId
+     * @return cn.edu.hfut.xc.bookauthordemo.common.util.Result
+     * @description 根据店主id查询该店主所包含的商店信息
+     * @method selectByPrimaryKey
+     */
+    @RequestMapping(value = "/selectShopByShopOwnerId/{shopOwnerId}", method = RequestMethod.GET)
+    public Result selectShopByShopOwnerId(@PathVariable String shopOwnerId) {
+        Result result = new Result();
+        try {
+            if (StringUtil.isNullOrEmpty(shopOwnerId)) {
+                result.setRetCode(Result.RECODE_VALIDATE_ERROR);
+                result.setErrMsg("商店id不能为空");
+                return result;
+            }
+            result.setData(shopService.selectShopByShopOwnerId(shopOwnerId));
+            result.setRetCode(Result.RECODE_SUCCESS);
+        } catch (Exception e) {
+            result.setRetCode(Result.RECODE_ERROR);
+            result.setErrMsg("方法执行异常");
+            logger.error("方法执行异常" + e.getMessage() + e);
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+
+    /**
+     * @param nationalityId
+     * @return cn.edu.hfut.xc.bookauthordemo.common.util.Result
+     * @description 根据国籍id查询该国籍下的商店信息
+     * @method selectByPrimaryKey
+     */
+    @RequestMapping(value = "/selectShopByNationalityId/{nationalityId}", method = RequestMethod.GET)
+    public Result selectShopByNationalityId(@PathVariable String nationalityId) {
+        Result result = new Result();
+        try {
+            if (StringUtil.isNullOrEmpty(nationalityId)) {
+                result.setRetCode(Result.RECODE_VALIDATE_ERROR);
+                result.setErrMsg("国籍id不能为空");
+                return result;
+            }
+            result.setData(shopService.selectShopByNationalityId(nationalityId));
+            result.setRetCode(Result.RECODE_SUCCESS);
+        } catch (Exception e) {
+            result.setRetCode(Result.RECODE_ERROR);
+            result.setErrMsg("方法执行异常");
+            logger.error("方法执行异常" + e.getMessage() + e);
             throw new RuntimeException(e);
         }
         return result;

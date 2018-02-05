@@ -17,8 +17,6 @@ public class Book {
 
     private String publishedAddress;
 
-    private List<Author> authors;
-
     public String getId() {
         return id;
     }
@@ -73,13 +71,5 @@ public class Book {
 
     public void setPublishedAddress(String publishedAddress) {
         this.publishedAddress = publishedAddress == null ? null : publishedAddress.trim();
-    }
-
-    public List<Author> getAuthors() {
-        return authors;
-    }
-
-    public void setAuthors(List<Author> authors) {
-        this.authors = authors;
     }
 }

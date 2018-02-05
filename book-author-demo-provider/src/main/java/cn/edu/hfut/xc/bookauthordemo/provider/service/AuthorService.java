@@ -4,6 +4,7 @@ import cn.edu.hfut.xc.bookauthordemo.common.model.Author;
 import cn.edu.hfut.xc.bookauthordemo.common.model.AuthorInfo;
 import cn.edu.hfut.xc.bookauthordemo.common.util.Pagination;
 import cn.edu.hfut.xc.bookauthordemo.common.util.Result;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -119,9 +120,30 @@ public interface AuthorService {
     List<Author> selectAll();
 
     /**
-     * 根据作者id查询作者信息
+     * @param bookId
+     * @return java.util.List<cn.edu.hfut.xc.bookauthordemo.common.model.Author>
+     * @description 根据bookId查询作者信息
+     * @method selectByBookId
+     */
+    List<Author> selectAuthorsByBookId(@Param("bookId") String bookId);
+
+
+    /**
+     * 根据主键查询作者和该作者所写的书
      * @param id
      * @return
      */
-    Author selectAuthorBook(String id);
+    Author selectAuthorBookByPrimaryKey(String id);
+
+
+    /**
+     * @param nationalityId
+     * @return java.util.List<cn.edu.hfut.xc.bookauthordemo.common.model.Author>
+     * @description 根据国籍id查询该国籍下的作者信息
+     * @method selectAuthorsByNationalityId
+     */
+    List<Author> selectAuthorsByNationalityId(@Param("nationalityId") String nationalityId);
+
+//    PageList<Author> pageSelect(String authorName, int pageNum , int pageSize );
+
 }
