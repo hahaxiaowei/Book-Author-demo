@@ -1,79 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa389f69-41b6-4ee7-8d28-f652886de1b6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/book-author-demo-common/src/main/java/cn/edu/hfut/xc/bookauthordemo/common/entity/AuthorBookVo.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-common/target/classes/cn/edu/hfut/xc/bookauthordemo/common/model/Author.class" afterPath="$PROJECT_DIR$/book-author-demo-common/target/classes/cn/edu/hfut/xc/bookauthordemo/common/model/Author.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-common/target/classes/cn/edu/hfut/xc/bookauthordemo/common/model/Book.class" afterPath="$PROJECT_DIR$/book-author-demo-common/target/classes/cn/edu/hfut/xc/bookauthordemo/common/model/Book.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-common/target/classes/cn/edu/hfut/xc/bookauthordemo/common/model/Library.class" afterPath="$PROJECT_DIR$/book-author-demo-common/target/classes/cn/edu/hfut/xc/bookauthordemo/common/model/Library.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-common/target/classes/cn/edu/hfut/xc/bookauthordemo/common/model/Nationality.class" afterPath="$PROJECT_DIR$/book-author-demo-common/target/classes/cn/edu/hfut/xc/bookauthordemo/common/model/Nationality.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/target/classes/cn/edu/hfut/xc/bookauthordemo/provider/BookAuthorDemoProviderApplication.class" afterPath="$PROJECT_DIR$/book-author-demo-provider/target/classes/cn/edu/hfut/xc/bookauthordemo/provider/BookAuthorDemoProviderApplication.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/target/classes/cn/edu/hfut/xc/bookauthordemo/provider/dao/AuthorMapper.class" afterPath="$PROJECT_DIR$/book-author-demo-provider/target/classes/cn/edu/hfut/xc/bookauthordemo/provider/dao/AuthorMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/target/classes/cn/edu/hfut/xc/bookauthordemo/provider/dao/BookMapper.class" afterPath="$PROJECT_DIR$/book-author-demo-provider/target/classes/cn/edu/hfut/xc/bookauthordemo/provider/dao/BookMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/target/classes/cn/edu/hfut/xc/bookauthordemo/provider/dao/LibraryMapper.class" afterPath="$PROJECT_DIR$/book-author-demo-provider/target/classes/cn/edu/hfut/xc/bookauthordemo/provider/dao/LibraryMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/target/classes/cn/edu/hfut/xc/bookauthordemo/provider/dao/PublisherMapper.class" afterPath="$PROJECT_DIR$/book-author-demo-provider/target/classes/cn/edu/hfut/xc/bookauthordemo/provider/dao/PublisherMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/target/classes/cn/edu/hfut/xc/bookauthordemo/provider/dao/ShopMapper.class" afterPath="$PROJECT_DIR$/book-author-demo-provider/target/classes/cn/edu/hfut/xc/bookauthordemo/provider/dao/ShopMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/target/classes/cn/edu/hfut/xc/bookauthordemo/provider/dao/ShopOwnerMapper.class" afterPath="$PROJECT_DIR$/book-author-demo-provider/target/classes/cn/edu/hfut/xc/bookauthordemo/provider/dao/ShopOwnerMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/target/classes/cn/edu/hfut/xc/bookauthordemo/provider/service/AuthorService.class" afterPath="$PROJECT_DIR$/book-author-demo-provider/target/classes/cn/edu/hfut/xc/bookauthordemo/provider/service/AuthorService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/target/classes/cn/edu/hfut/xc/bookauthordemo/provider/service/BookService.class" afterPath="$PROJECT_DIR$/book-author-demo-provider/target/classes/cn/edu/hfut/xc/bookauthordemo/provider/service/BookService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/target/classes/cn/edu/hfut/xc/bookauthordemo/provider/service/Impl/AuthorServiceImpl.class" afterPath="$PROJECT_DIR$/book-author-demo-provider/target/classes/cn/edu/hfut/xc/bookauthordemo/provider/service/Impl/AuthorServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/target/classes/cn/edu/hfut/xc/bookauthordemo/provider/service/Impl/BookServiceImpl.class" afterPath="$PROJECT_DIR$/book-author-demo-provider/target/classes/cn/edu/hfut/xc/bookauthordemo/provider/service/Impl/BookServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-client/src/main/java/cn/edu/hfut/xc/bookauthordemo/client/BookAuthorDemoClientApplication.java" afterPath="$PROJECT_DIR$/book-author-demo-client/src/main/java/cn/edu/hfut/xc/bookauthordemo/client/BookAuthorDemoClientApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-client/src/main/java/cn/edu/hfut/xc/bookauthordemo/client/controller/AuthorController.java" afterPath="$PROJECT_DIR$/book-author-demo-client/src/main/java/cn/edu/hfut/xc/bookauthordemo/client/controller/AuthorController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-client/src/main/java/cn/edu/hfut/xc/bookauthordemo/client/feign/AuthorService.java" afterPath="$PROJECT_DIR$/book-author-demo-client/src/main/java/cn/edu/hfut/xc/bookauthordemo/client/feign/AuthorService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-client/src/main/java/cn/edu/hfut/xc/bookauthordemo/client/feign/hystrix/AuthorHystrix.java" afterPath="$PROJECT_DIR$/book-author-demo-client/src/main/java/cn/edu/hfut/xc/bookauthordemo/client/feign/hystrix/AuthorHystrix.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-common/src/main/java/cn/edu/hfut/xc/bookauthordemo/common/model/Author.java" afterPath="$PROJECT_DIR$/book-author-demo-common/src/main/java/cn/edu/hfut/xc/bookauthordemo/common/model/Author.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-common/src/main/java/cn/edu/hfut/xc/bookauthordemo/common/model/Book.java" afterPath="$PROJECT_DIR$/book-author-demo-common/src/main/java/cn/edu/hfut/xc/bookauthordemo/common/model/Book.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-common/src/main/java/cn/edu/hfut/xc/bookauthordemo/common/model/Library.java" afterPath="$PROJECT_DIR$/book-author-demo-common/src/main/java/cn/edu/hfut/xc/bookauthordemo/common/model/Library.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-common/src/main/java/cn/edu/hfut/xc/bookauthordemo/common/model/Nationality.java" afterPath="$PROJECT_DIR$/book-author-demo-common/src/main/java/cn/edu/hfut/xc/bookauthordemo/common/model/Nationality.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/pom.xml" afterPath="$PROJECT_DIR$/book-author-demo-provider/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/BookAuthorDemoProviderApplication.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/BookAuthorDemoProviderApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/controller/AuthorController.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/controller/AuthorController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/controller/BookClassController.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/controller/BookClassController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/controller/BookController.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/controller/BookController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/controller/LibraryController.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/controller/LibraryController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/controller/NationalityController.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/controller/NationalityController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/controller/PublisherController.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/controller/PublisherController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/controller/ShopController.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/controller/ShopController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/controller/ShopOwnerController.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/controller/ShopOwnerController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/dao/AuthorMapper.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/dao/AuthorMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/dao/BookMapper.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/dao/BookMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/dao/LibraryMapper.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/dao/LibraryMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/dao/PublisherMapper.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/dao/PublisherMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/dao/ShopMapper.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/dao/ShopMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/dao/ShopOwnerMapper.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/dao/ShopOwnerMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/AuthorService.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/AuthorService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/BookService.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/BookService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/Impl/AuthorServiceImpl.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/Impl/AuthorServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/Impl/BookServiceImpl.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/Impl/BookServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/Impl/LibraryServiceImpl.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/Impl/LibraryServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/Impl/NationalityServiceImpl.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/Impl/NationalityServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/Impl/PublisherServiceImpl.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/Impl/PublisherServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/Impl/ShopOwnerServiceImpl.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/Impl/ShopOwnerServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/Impl/ShopServiceImpl.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/Impl/ShopServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/LibraryService.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/LibraryService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/PublisherService.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/PublisherService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/ShopOwnerService.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/ShopOwnerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/ShopService.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/service/ShopService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/resources/mapper/AuthorMapper.xml" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/resources/mapper/AuthorMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/resources/mapper/AuthorWithBookMapper.xml" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/resources/mapper/AuthorWithBookMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/resources/mapper/BookMapper.xml" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/resources/mapper/BookMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/resources/mapper/LibraryMapper.xml" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/resources/mapper/LibraryMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/resources/mapper/NationalityMapper.xml" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/resources/mapper/NationalityMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/resources/mapper/PublisherMapper.xml" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/resources/mapper/PublisherMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/resources/mapper/ShopMapper.xml" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/resources/mapper/ShopMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/main/resources/mapper/ShopOwnerMapper.xml" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/main/resources/mapper/ShopOwnerMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/target/classes/mapper/AuthorMapper.xml" afterPath="$PROJECT_DIR$/book-author-demo-provider/target/classes/mapper/AuthorMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/target/classes/mapper/BookMapper.xml" afterPath="$PROJECT_DIR$/book-author-demo-provider/target/classes/mapper/BookMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/target/classes/mapper/LibraryMapper.xml" afterPath="$PROJECT_DIR$/book-author-demo-provider/target/classes/mapper/LibraryMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/target/classes/mapper/NationalityMapper.xml" afterPath="$PROJECT_DIR$/book-author-demo-provider/target/classes/mapper/NationalityMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/target/classes/mapper/PublisherMapper.xml" afterPath="$PROJECT_DIR$/book-author-demo-provider/target/classes/mapper/PublisherMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/target/classes/mapper/ShopMapper.xml" afterPath="$PROJECT_DIR$/book-author-demo-provider/target/classes/mapper/ShopMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book-author-demo-provider/target/classes/mapper/ShopOwnerMapper.xml" afterPath="$PROJECT_DIR$/book-author-demo-provider/target/classes/mapper/ShopOwnerMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/test/java/cn/edu/hfut/xc/bookauthordemo/provider/service/Impl/AuthorServiceImplTest.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/test/java/cn/edu/hfut/xc/bookauthordemo/provider/service/Impl/AuthorTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/book-author-demo-provider/src/test/java/cn/edu/hfut/xc/bookauthordemo/provider/service/Impl/NationaltityServiceImplTest.java" afterPath="$PROJECT_DIR$/book-author-demo-provider/src/test/java/cn/edu/hfut/xc/bookauthordemo/provider/service/Impl/NationaltityTest.java" />
-    </list>
+    <list default="true" id="fa389f69-41b6-4ee7-8d28-f652886de1b6" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/book-author-demo-client/target/" />
@@ -92,108 +20,7 @@
     </SUITE>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/book-author-demo-provider/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="106" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HelloJob.java" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Desktop/quartz/HelloJob.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QuarzCfg.java" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Desktop/quartz/QuarzCfg.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BookAuthorDemoProviderApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/BookAuthorDemoProviderApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="6" column="30" lean-forward="false" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthorWithBookController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/controller/AuthorWithBookController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="9" column="49" lean-forward="false" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/book-author-demo-provider/src/main/resources/bootstrap.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="11" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NationalityController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/controller/NationalityController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3579">
-              <caret line="180" column="19" lean-forward="false" selection-start-line="180" selection-start-column="5" selection-end-line="180" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SwaggerConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/config/SwaggerConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="generatorConfig.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/book-author-demo-provider/src/main/resources/generatorConfig.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mybatis-config.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/book-author-demo-provider/src/main/resources/mybatis-config.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -340,6 +167,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -612,7 +443,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+              <item name="sql数据库脚本" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Book-Author-Demo" type="b2602c69:ProjectViewProjectNode" />
@@ -682,10 +513,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -707,6 +534,7 @@
       <recent name="cn.edu.hfut.xc.bookauthordemo.provider.config" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CompanyProjectTraining\Book-Author-demo\book-author-demo-provider\src\main\resources\sql数据库脚本" />
       <recent name="D:\CompanyProjectTraining\Book-Author-demo\book-author-demo-provider\src\main\resources" />
     </key>
   </component>
@@ -975,6 +803,7 @@
       <workItem from="1517552635387" duration="410000" />
       <workItem from="1517554865217" duration="3000" />
       <workItem from="1517554879405" duration="2673000" />
+      <workItem from="1517812023615" duration="234000" />
     </task>
     <servers />
   </component>
@@ -1005,42 +834,41 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126998000" />
+    <option name="totallyTimeSpent" value="127232000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="45" y="3" width="1862" height="1008" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2647059" sideWeight="0.2606264" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14932886" sideWeight="0.4797048" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2647059" sideWeight="0.7393736" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2317647" sideWeight="0.4826622" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41982183" sideWeight="0.90816325" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2647059" sideWeight="0.2606264" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14932886" sideWeight="0.4797048" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41982183" sideWeight="0.90816325" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3238255" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2647059" sideWeight="0.7393736" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Tail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2317647" sideWeight="0.4826622" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.04027927" sideWeight="0.5202952" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1059,14 +887,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/book-author-demo-provider/src/test/java/cn/edu/hfut/xc/bookauthordemo/provider/service/Impl/AuthorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/book-author-demo-common/src/main/java/cn/edu/hfut/xc/bookauthordemo/common/model/Nationality.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
@@ -1491,7 +1311,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/config/SwaggerConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
+        <state relative-caret-position="225">
           <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding />
         </state>
@@ -1507,7 +1327,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/book-author-demo-provider/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
+        <state relative-caret-position="2400">
           <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="106" selection-end-column="27" />
           <folding />
         </state>
@@ -1516,15 +1336,23 @@
     <entry file="file://$PROJECT_DIR$/book-author-demo-provider/src/main/resources/bootstrap.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="11" selection-end-column="58" />
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="11" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/book-author-demo-provider/src/main/java/cn/edu/hfut/xc/bookauthordemo/provider/controller/NationalityController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3579">
+        <state relative-caret-position="513">
           <caret line="180" column="19" lean-forward="false" selection-start-line="180" selection-start-column="5" selection-end-line="180" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book-author-demo-provider/src/main/resources/sql数据库脚本/db_book.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-600">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
